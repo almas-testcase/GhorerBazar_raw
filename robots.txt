@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+# GitHub Pages এ তোলার পর নিচের ঠিকানা নিজের সাইটের ঠিকানা দিয়ে বদলান (README দেখুন)
+Sitemap: https://YOUR-USERNAME.github.io/YOUR-REPO/sitemap.xml

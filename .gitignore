@@ -1,0 +1,11 @@
+# এডিটর ও সিস্টেম ফাইল
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# লগ ও সাময়িক ফাইল
+*.log
+*.tmp
+node_modules/

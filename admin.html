@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>অ্যাডমিন প্যানেল | খাঁটিঘর</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+
+  <!-- লগইন -->
+  <div class="login" id="login">
+    <form class="form" id="loginForm">
+      <h2>🔐 অ্যাডমিন লগইন</h2>
+      <input type="password" id="pass" placeholder="পাসওয়ার্ড" autocomplete="current-password" required>
+      <button class="btn btn-block" type="submit">লগইন</button>
+      <p class="form-msg" id="loginMsg"></p>
+    </form>
+  </div>
+
+  <!-- ড্যাশবোর্ড -->
+  <div id="app" hidden>
+    <header class="a-head">
+      <b>🌿 খাঁটিঘর অ্যাডমিন</b>
+      <nav class="a-tabs" id="tabs">
+        <button data-tab="dash" class="active">📊 ড্যাশবোর্ড</button>
+        <button data-tab="orders">📦 অর্ডার</button>
+        <button data-tab="slides">🖼️ স্লাইডার</button>
+        <button data-tab="categories">🗂️ ক্যাটাগরি</button>
+        <button data-tab="products">🛍️ পণ্য</button>
+        <button data-tab="coupons">🎟️ কুপন</button>
+        <button data-tab="reviews">⭐ রিভিউ</button>
+        <button data-tab="notify">🔔 নোটিফিকেশন</button>
+        <button data-tab="settings">⚙️ সেটিংস</button>
+      </nav>
+      <span><button class="btn btn-small btn-outline" id="refresh">🔄</button> <button class="btn btn-small btn-outline" id="logout">লগআউট</button></span>
+    </header>
+
+    <main class="a-main">
+      <section id="tab-dash">
+        <div class="stats" id="stats"></div>
+        <div class="dash-grid">
+          <div class="a-card chart-card">
+            <div class="chart-head">
+              <div><h3>গত ৭ দিনের বিক্রি</h3><p class="a-hint" id="salesSub"></p></div>
+              <button class="btn btn-small btn-outline" id="chartToggle" type="button">📋 টেবিল</button>
+            </div>
+            <div id="salesChart"></div>
+            <div id="salesTable" hidden></div>
+            <div class="chart-tip" id="chartTip" hidden></div>
+          </div>
+          <div class="dash-side">
+            <div class="a-card"><h3>অর্ডারের অবস্থা</h3><div id="statusBars" class="hbars"></div></div>
+            <div class="a-card"><h3>সর্বাধিক বিক্রিত পণ্য</h3><div id="topProducts" class="hbars"></div></div>
+          </div>
+        </div>
+        <h3>⚠️ কম স্টকের পণ্য</h3>
+        <div id="lowStock" class="a-card"></div>
+        <h3>সাম্প্রতিক অর্ডার</h3>
+        <div id="recent" class="a-card"></div>
+      </section>
+
+      <section id="tab-orders" hidden>
+        <div class="a-bar">
+          <input type="search" id="oSearch" placeholder="🔍 নাম / ফোন / অর্ডার আইডি">
+          <select id="oStatus"></select>
+          <button class="btn btn-small" id="csvBtn">⬇️ CSV</button>
+        </div>
+        <div id="ordersList"></div>
+      </section>
+
+      <section id="tab-slides" hidden>
+        <div class="a-bar"><button class="btn btn-small" id="addSlide">➕ নতুন স্লাইড</button><span class="a-hint" id="slideCount"></span></div>
+        <div class="a-card size-guide">
+          <b>📐 ছবির সঠিক মাপ (সব ডিভাইসে মানানসই)</b>
+          <table>
+            <tr><th>কোথায়</th><th>মাপ (px)</th><th>অনুপাত</th><th>সাইজ</th></tr>
+            <tr><td>ডেস্কটপ ও ট্যাবলেট স্লাইড</td><td><b>1600 × 800</b></td><td>2 : 1</td><td>≤ 250 KB</td></tr>
+            <tr><td>মোবাইল স্লাইড</td><td><b>1000 × 800</b></td><td>5 : 4</td><td>≤ 150 KB</td></tr>
+            <tr><td>পণ্যের ছবি</td><td><b>800 × 800</b></td><td>1 : 1</td><td>≤ 120 KB</td></tr>
+          </table>
+          <p class="a-hint">💡 আপলোড করলে ছবি নিজে থেকে এই মাপে কেটে ছোট করে নেওয়া হয়। গুরুত্বপূর্ণ লেখা/বস্তু ছবির <b>মাঝের ৮৫%</b> এলাকায় রাখুন, কারণ ছোট স্ক্রিনে কিনারা সামান্য কাটা পড়তে পারে। ব্যানারে লেখা ছবির ভেতরেই থাকলে শিরোনাম ঘর ফাঁকা রাখুন।</p>
+        </div>
+        <div id="slideList"></div>
+      </section>
+
+      <section id="tab-categories" hidden>
+        <div class="a-bar"><button class="btn btn-small" id="addCategory">➕ নতুন ক্যাটাগরি</button><span class="a-hint">পণ্য যোগ করার সময় এখান থেকেই ক্যাটাগরি বাছতে হয়। ⬆️⬇️ দিয়ে সাইটে দেখানোর ক্রম ঠিক করুন।</span></div>
+        <div class="table-wrap"><table class="a-table" id="catTable"></table></div>
+      </section>
+
+      <section id="tab-products" hidden>
+        <div class="a-bar"><button class="btn btn-small" id="addProduct">➕ নতুন পণ্য</button></div>
+        <div class="table-wrap"><table class="a-table" id="prodTable"></table></div>
+      </section>
+
+      <section id="tab-coupons" hidden>
+        <div class="a-bar"><button class="btn btn-small" id="addCoupon">➕ নতুন কুপন</button></div>
+        <div class="table-wrap"><table class="a-table" id="couponTable"></table></div>
+      </section>
+
+      <section id="tab-reviews" hidden>
+        <div class="a-bar">
+          <select id="rvFilter"></select>
+          <button class="btn btn-small" id="addReview">➕ রিভিউ যোগ করুন</button>
+        </div>
+        <p class="a-hint">ক্রেতারা ডেলিভারি পাওয়ার পর রিভিউ দিলে এখানে "অপেক্ষায়" থাকে। অনুমোদন দিলে তবেই সাইটে দেখায়।</p>
+        <div id="reviewList"></div>
+      </section>
+
+      <section id="tab-notify" hidden>
+        <form class="form" id="notifyForm" style="max-width:640px">
+          <h3>📧 ইমেইল নোটিফিকেশন</h3>
+          <label class="pay-opt"><input type="checkbox" name="emailAdmin"> নতুন অর্ডার এলে আমাকে ইমেইল করুন</label>
+          <label>আমার ইমেইল (ফাঁকা = Apps Script মালিকের Gmail)<input name="adminEmail" type="email" placeholder="you@gmail.com"></label>
+          <label class="pay-opt"><input type="checkbox" name="emailCustomer"> ক্রেতা ইমেইল দিলে তাকে কনফার্মেশন ইমেইল পাঠান</label>
+
+          <h3>📱 SMS নোটিফিকেশন</h3>
+          <label class="pay-opt"><input type="checkbox" name="smsAdmin"> নতুন অর্ডার এলে আমাকে SMS করুন</label>
+          <label>আমার মোবাইল নম্বর<input name="adminPhone" type="tel" placeholder="01XXXXXXXXX"></label>
+          <label class="pay-opt"><input type="checkbox" name="smsCustomer"> ক্রেতাকে SMS পাঠান</label>
+          <label>SMS গেটওয়ে (প্রিসেট)
+            <select id="smsPreset">
+              <option value="">— বেছে নিন —</option>
+              <option value="http://bulksmsbd.net/api/smsapi?api_key={key}&type=text&number={number}&senderid={sender}&message={message}">BulkSMSBD</option>
+              <option value="https://api.greenweb.com.bd/api.php?token={key}&to={number_local}&message={message}">GreenWeb</option>
+              <option value="custom">অন্য গেটওয়ে (নিজে URL লিখব)</option>
+            </select>
+          </label>
+          <label>গেটওয়ে URL টেমপ্লেট<input name="smsUrl" placeholder="https://.../api?key={key}&to={number}&msg={message}"></label>
+          <p class="a-hint">ব্যবহারযোগ্য চিহ্ন: <code>{key}</code> <code>{sender}</code> <code>{number}</code> (8801…) <code>{number_local}</code> (01…) <code>{message}</code></p>
+          <div class="row2">
+            <label>API Key / Token<input name="smsKey" type="password" autocomplete="off" placeholder="গেটওয়ে থেকে পাওয়া কী"></label>
+            <label>Sender ID<input name="smsSender" placeholder="যেমন: KHATIGHOR"></label>
+          </div>
+
+          <h3>📦 স্ট্যাটাস আপডেট</h3>
+          <label class="pay-opt"><input type="checkbox" name="statusNotify"> অর্ডার কনফার্মড/শিপড/ডেলিভারড/বাতিল হলে ক্রেতাকে জানান</label>
+
+          <button class="btn btn-block" type="submit">💾 সংরক্ষণ করুন</button>
+          <div class="mbtns">
+            <button type="button" class="btn btn-outline btn-small" id="testEmail">✉️ টেস্ট ইমেইল</button>
+            <button type="button" class="btn btn-outline btn-small" id="testSms">📱 টেস্ট SMS</button>
+          </div>
+          <p class="form-msg" id="notifyMsg"></p>
+        </form>
+      </section>
+
+      <section id="tab-settings" hidden>
+        <form class="form" id="settingsForm" style="max-width:640px">
+          <h3>🚚 ডেলিভারি</h3>
+          <div class="row2">
+            <label>ঢাকার ভিতরে চার্জ (৳)<input name="deliveryInside" type="number" min="0"></label>
+            <label>ঢাকার বাইরে চার্জ (৳)<input name="deliveryOutside" type="number" min="0"></label>
+          </div>
+          <label>এই টাকার উপরে ফ্রি ডেলিভারি (৳, ০ = বন্ধ)<input name="freeDeliveryAbove" type="number" min="0"></label>
+
+          <h3>📞 যোগাযোগ ও ফুটার</h3>
+          <div class="row2">
+            <label>কল নম্বর<input name="phone" placeholder="01XXXXXXXXX"></label>
+            <label>হোয়াটসঅ্যাপ (8801XXXXXXXXX)<input name="whatsapp"></label>
+          </div>
+          <div class="row2">
+            <label>বিকাশ নম্বর<input name="bkash"></label>
+            <label>নগদ নম্বর<input name="nagad"></label>
+          </div>
+          <label>ইমেইল (ফুটারে দেখাবে, ফাঁকা = লুকানো)<input name="email" type="email" placeholder="info@yourshop.com"></label>
+          <label>ঠিকানা (ফুটারে, ফাঁকা = লুকানো)<input name="address" maxlength="200" placeholder="যেমন: মিরপুর-১০, ঢাকা"></label>
+          <label>খোলার সময় (ফুটারে)<input name="hours" maxlength="200" placeholder="প্রতিদিন সকাল ৯টা – রাত ১০টা"></label>
+          <label>ফেসবুক পেজের লিংক<input name="facebook" placeholder="https://facebook.com/yourpage"></label>
+          <label>লিংকডইন লিংক<input name="linkedin" placeholder="https://www.linkedin.com/company/yourpage"></label>
+          <label>টিকটক লিংক<input name="tiktok" placeholder="https://www.tiktok.com/@yourid"></label>
+          <p class="a-hint">সোশ্যাল লিংক অবশ্যই <b>https://</b> দিয়ে শুরু হতে হবে। ফাঁকা রাখলে ফুটারে ওই আইকন দেখায় না।</p>
+
+          <h3>🎁 অফার ও প্রোমো</h3>
+          <label>ওয়েবসাইটের উপরের স্ক্রলিং নোটিশ (ফাঁকা = বন্ধ)<input name="notice" maxlength="200" placeholder="যেমন: ঈদ উপলক্ষে সব পণ্যে ১০% ছাড়!"></label>
+          <label>হিরোর পাশে কুপন কার্ড — কুপন কোড (ফাঁকা = কার্ড লুকানো)<input name="promoCoupon" maxlength="20" placeholder="যেমন: WELCOME10" style="text-transform:uppercase"></label>
+          <div class="row2">
+            <label>অফার শেষের সময় (কাউন্টডাউন)<input name="offerEndsAt" type="datetime-local"></label>
+            <label>কাউন্টডাউনের লেখা<input name="offerText" maxlength="120" placeholder="🔥 ঈদ অফার শেষ হতে বাকি:"></label>
+          </div>
+          <p class="a-hint">⏱️ কাউন্টডাউন ব্যান্ড শুধু তখনই দেখায় যখন "অফার শেষের সময়" ভবিষ্যতে থাকে; সময় ফাঁকা বা পেরিয়ে গেলে নিজে লুকিয়ে যায় (নকল/চিরস্থায়ী কাউন্টডাউন নেই — ক্রেতার আস্থার জন্য)।</p>
+
+          <h3>📈 ট্র্যাকিং</h3>
+          <label>Meta (Facebook) Pixel ID — শুধু সংখ্যা, ফাঁকা = বন্ধ
+            <input name="metaPixelId" inputmode="numeric" placeholder="যেমন: 1234567890123456">
+          </label>
+          <p class="a-hint">Facebook Events Manager → Data Sources → আপনার Pixel → আইডি কপি করে বসান। সংরক্ষণ করলেই সাইটে চালু। ঠিক চলছে কিনা দেখতে Chrome-এর "Meta Pixel Helper" ব্যবহার করুন।</p>
+
+          <button class="btn btn-block" type="submit">💾 সংরক্ষণ করুন</button>
+          <p class="form-msg" id="setMsg"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- পণ্য/কুপন এডিট মডাল -->
+  <dialog id="modal"><form method="dialog" class="form" id="modalForm"></form></dialog>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

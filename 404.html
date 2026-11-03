@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>পেজটি পাওয়া যায়নি | খাঁটিঘর</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2715%27 fill=%27%23F48721%27/%3E%3Cpath d=%27M47 13C25 13 13 27 13 43c0 4 1 7 3 10 2-14 11-24 25-30-10 7-17 16-20 29 2 1 5 2 8 2 16 0 26-16 18-41z%27 fill=%27%23fff%27/%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0}
+    body{font-family:"Hind Siliguri",system-ui,sans-serif;min-height:100vh;display:grid;place-content:center;text-align:center;gap:12px;padding:24px;color:#16241b;background:radial-gradient(600px 300px at 80% 0%,rgba(242,169,0,.14),transparent 60%),#f8f5ed}
+    .big{font-size:5rem;line-height:1}
+    h1{color:#17241f;font-size:1.8rem}
+    p{color:#5b695f}
+    a{display:inline-block;margin-top:8px;background:linear-gradient(135deg,#f79a3e,#F48721);color:#fff;text-decoration:none;font-weight:600;padding:12px 28px;border-radius:10px;box-shadow:0 4px 14px rgba(23,112,60,.28)}
+  </style>
+</head>
+<body>
+  <div class="big">🛒</div>
+  <h1>দুঃখিত, পেজটি খুঁজে পাওয়া যায়নি</h1>
+  <p>লিংকটি ভুল হতে পারে অথবা পেজটি সরিয়ে নেওয়া হয়েছে।</p>
+  <a id="home" href="/">← হোমপেজে ফিরুন</a>
+  <script>
+    // GitHub Pages প্রজেক্ট সাইট (username.github.io/repo/) হলে রিপো ফোল্ডারে ফেরত নেয়
+    (function () {
+      var seg = location.pathname.split("/").filter(Boolean)[0];
+      if (location.hostname.slice(-10) === ".github.io" && seg) document.getElementById("home").href = "/" + seg + "/";
+    })();
+  </script>
+</body>
+</html>

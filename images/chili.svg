@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <ellipse cx="200" cy="348" rx="98" ry="15" fill="#e9e5dc"/>
+  <path d="M130 102h140l-9 221H139z" fill="#faf6ed" stroke="#d8cbb8" stroke-width="5"/>
+  <path d="M130 102h140v38H130z" fill="#c94b34"/><path d="M140 283h122l-3 40H139z" fill="#e6c6a9"/>
+  <rect x="150" y="168" width="100" height="94" rx="17" fill="#fffdf8" stroke="#e3d6c5" stroke-width="4"/>
+  <path d="M202 184c-6 28-34 35-24 56 10 20 34 12 38-3 5-17-12-29-14-53z" fill="#d94b32"/>
+  <path d="M200 190c-3-15 5-22 17-26" fill="none" stroke="#537b42" stroke-width="7" stroke-linecap="round"/>
+  <text x="200" y="245" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#4a3b2e">মরিচ গুঁড়া</text>
+  <text x="200" y="300" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#765e43">প্রাকৃতিক মশলা</text>
+</svg>

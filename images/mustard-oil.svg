@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs><linearGradient id="glass" x2="0" y2="1"><stop stop-color="#f6c43b"/><stop offset="1" stop-color="#d47a12"/></linearGradient><linearGradient id="oil" x2="0" y2="1"><stop stop-color="#ffe681"/><stop offset="1" stop-color="#e89b12"/></linearGradient></defs>
+  <ellipse cx="204" cy="350" rx="104" ry="17" fill="#e9e5dc"/>
+  <path d="M170 58h66v43l18 25c15 21 24 48 24 76v115c0 20-16 36-36 36h-78c-20 0-36-16-36-36V202c0-28 9-55 25-77l17-24z" fill="url(#glass)" stroke="#b96c13" stroke-width="5"/>
+  <path d="M171 59h64V33h-64z" fill="#262b2b"/><path d="M177 35h52v-9h-52z" fill="#3b4140"/>
+  <path d="M134 198c0-32 8-54 21-74l15-22h66l17 24c13 20 21 43 21 72v17H134z" fill="url(#oil)" opacity=".92"/>
+  <rect x="139" y="185" width="128" height="104" rx="12" fill="#fffdf3" stroke="#ded5b8" stroke-width="4"/>
+  <path d="M163 210c15-20 48-22 69-2" fill="none" stroke="#376c39" stroke-width="5" stroke-linecap="round"/>
+  <path d="M196 214c-16 14-17 33 0 42 17-9 16-28 0-42z" fill="#e4a80d"/>
+  <text x="203" y="272" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#3b4b2d">সরিষার তেল</text>
+</svg>

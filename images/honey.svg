@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs><linearGradient id="honey" x2="0" y2="1"><stop stop-color="#ffce55"/><stop offset="1" stop-color="#d97808"/></linearGradient></defs>
+  <ellipse cx="200" cy="350" rx="105" ry="16" fill="#e9e5dc"/>
+  <path d="M166 78h68v39l24 22c14 13 22 32 22 53v113c0 22-18 40-40 40h-80c-22 0-40-18-40-40V192c0-21 8-40 23-54l23-21z" fill="url(#honey)" stroke="#b8640a" stroke-width="5"/>
+  <rect x="167" y="44" width="66" height="38" rx="8" fill="#252a29"/><path d="M175 45v-13h50v13" fill="#373d3b"/>
+  <path d="M123 205c0-23 8-42 23-56l20-19h68l22 21c13 13 20 32 20 54v31H123z" fill="#ffc94e"/>
+  <rect x="136" y="201" width="128" height="100" rx="16" fill="#fffaf0" stroke="#e5d6b8" stroke-width="4"/>
+  <path d="M174 230h52M181 242h38" stroke="#638443" stroke-width="5" stroke-linecap="round"/>
+  <path d="M200 253c-20 0-27 21 0 31 27-10 20-31 0-31z" fill="#e8a316"/>
+  <text x="200" y="293" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="700" fill="#594126">খাঁটি মধু</text>
+</svg>
