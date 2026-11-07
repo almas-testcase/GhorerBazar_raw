@@ -44,6 +44,7 @@ GitHub Pages static site বিনা hosting খরচে প্রকাশ �
 
 - **After editing any CSS/JS file**, bump the `?v=NN` number in the HTML files (and `CACHE` in `sw.js`). Versioned files are cached by the browser/service worker until the number changes.
 - **Apps Script**: after pasting a new `google-apps-script.gs`, use *Deploy → Manage deployments → Edit → New version*. Public data (products, settings, slides) is cached for ~60 s on the server; any change made in the admin panel refreshes it immediately.
+- **Product gallery**: after updating Apps Script, run `setup()` once to ensure the Products sheet has the `images` column, then deploy a new version of the existing Web App deployment. Keep its Web App URL the same as `SITE_API_URL` in `config.js`.
 - **Admin password**: change `ADMIN_PASSWORD` in *Apps Script → Project Settings → Script properties*. The admin panel shows a red warning while the default password is still in use.
 - Home/other pages start loading data in `<head>` (`prefetch.js`) and repeat visitors see the last saved data instantly while fresh data loads.
 - `images/admin-down-img.png` (1.8 MB) is no longer used by the admin dashboard and can be deleted.

@@ -11,7 +11,7 @@
 - [ ] **Admin পাসওয়ার্ড বদলান** — ডিফল্ট `changeme123` থাকলে Admin-এর উপরে লাল সতর্কতা দেখায়। Apps Script → Project Settings → Script Properties → `ADMIN_PASSWORD` (দীর্ঘ, অনন্য পাসওয়ার্ড দিন)
 - [ ] Courier API key (Steadfast/Pathao) **শুধু** Admin → Courier থেকে দিন — কখনও Sheet বা কোডে লিখবেন না
 - [ ] Google Sheet ও Apps Script প্রজেক্ট **শুধু মালিকের অ্যাকাউন্টে** শেয়ার রাখুন
-- [ ] Apps Script কোড বদলালে: Deploy → Manage deployments → ✏️ → **New version** → Deploy (একই URL থাকে)
+- [ ] Apps Script কোড বদলালে: `setup()` একবার চালান, তারপর Deploy → Manage deployments → ✏️ → **New version** → Deploy (একই URL থাকে); `config.js`-এর Web App URL যেন এই deployment-এর URL-ই হয়
 
 ## ৩. লাইভ করার পর (ডোমেইন পেলে)
 - [ ] `sitemap.xml` — `YOUR-USERNAME.github.io/YOUR-REPO` বদলে আসল ডোমেইন বসান

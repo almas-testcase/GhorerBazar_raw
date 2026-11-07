@@ -360,16 +360,13 @@ function productModal(p) {
     product.id = p.id || "";
     product.active = fd.has("active");
     product.images = parseProductImages(fd.get("images"), product.image ? 2 : 3).filter((url) => url !== String(product.image || "").trim());
-    await call("saveProduct", { product });
+    const saved = await call("saveProduct", { product });
     if (product.images.length) {
-      const saved = await call("products");
-      const row = saved.products.find((item) => product.id
-        ? String(item.id) === String(product.id)
-        : String(item.name) === String(product.name) && String(item.image || "") === String(product.image || ""));
-      const savedImages = parseProductImages(row && row.images, 3);
-      if (!row || product.images.some((url) => !savedImages.includes(url))) {
-        throw new Error("Gallery images were not saved. Update and deploy the latest Apps Script, then save this product again.");
+      if (!saved.productId || !Array.isArray(saved.images)) {
+        throw new Error("The deployed Apps Script is outdated. Update Code.gs, run setup(), deploy a new version, then save this product again.");
       }
+      const savedImages = parseProductImages(saved.images, 3);
+      if (product.images.some((url) => !savedImages.includes(url))) throw new Error("Apps Script could not confirm all gallery images in the Products sheet. Check the sheet columns and try again.");
     }
   });
   renderProductImagePreviews();

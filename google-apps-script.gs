@@ -568,6 +568,8 @@ function adminDispatch(d, ss, ctx) {
       return { ok: true, products: readTable(ss.getSheetByName("Products"), PRODUCT_COLS) };
     case "saveProduct": {
       const sh = ss.getSheetByName("Products");
+      if (!sh) return { ok: false, error: "Products sheet is missing. Run setup() in Apps Script, then try again." };
+      ensureCols(sh, PRODUCT_COLS);
       const p = d.product || {};
       const rows = readTable(sh, PRODUCT_COLS);
       const cats = categoryRows(ss).map((c) => c.name);
@@ -585,12 +587,22 @@ function adminDispatch(d, ss, ctx) {
         str(p.desc, 600), JSON.stringify(gallery)
       ];
       const i = p.id ? rows.findIndex((r) => String(r.id) === String(p.id)) : -1;
-      if (i >= 0) sh.getRange(i + 2, 1, 1, PRODUCT_COLS.length).setValues([vals]);
+      let rowNumber;
+      if (i >= 0) {
+        rowNumber = i + 2;
+        sh.getRange(rowNumber, 1, 1, PRODUCT_COLS.length).setValues([vals]);
+      }
       else {
         vals[0] = rows.reduce((m, r) => Math.max(m, Number(r.id) || 0), 0) + 1;
         sh.appendRow(vals);
+        rowNumber = sh.getLastRow();
       }
-      return { ok: true };
+      const saved = sh.getRange(rowNumber, 1, 1, PRODUCT_COLS.length).getValues()[0];
+      const savedImages = productImageValues(saved[PRODUCT_COLS.indexOf("images")]);
+      if (JSON.stringify(savedImages) !== JSON.stringify(gallery)) {
+        return { ok: false, error: "Product was not saved correctly. Run setup() in Apps Script to update the Products sheet columns, then try again." };
+      }
+      return { ok: true, productId: String(vals[0]), images: savedImages };
     }
     /* --- ক্যাটাগরি --- */
     case "categories":
