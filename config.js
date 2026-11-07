@@ -16,16 +16,16 @@ const SITE_SLIDES = [];
 
 // ফুটারের যোগাযোগ — এখানে নিজের ইমেইল ও ঠিকানা বসান। অ্যাডমিন → সেটিংসে দিলে সেটাই অগ্রাধিকার পায়। ফাঁকা রাখলে ওই সারি দেখায় না।
 const SITE_CONTACT = {
-  email: "almasforhasi1999@gmail.com",
-  address: "আপনার ঠিকানা, ঢাকা, বাংলাদেশ"
+  email: "",
+  address: ""
 };
 
 // সোশ্যাল মিডিয়া লিংক (ফুটারের আইকন)। অ্যাডমিন → সেটিংসে দিলে সেটাই অগ্রাধিকার পায়।
-// ফাঁকা রাখলে ওই আইকন দেখায় না। অবশ্যই https:// দিয়ে শুরু করুন। নিচেরগুলো নমুনা — নিজের পেজের লিংক বসান।
+// ফাঁকা রাখলে ওই আইকন দেখায় না। অবশ্যই https:// দিয়ে শুরু করুন।
 const SITE_SOCIAL = {
-  facebook: "https://www.facebook.com/",     // যেমন: "https://facebook.com/আপনার-পেজ"
-  twitter: "https://twitter.com/",           // যেমন: "https://twitter.com/আপনার-আইডি"
-  instagram: "https://www.instagram.com/",   // যেমন: "https://www.instagram.com/আপনার-আইডি"
-  linkedin: "https://www.linkedin.com/",     // যেমন: "https://www.linkedin.com/company/আপনার-পেজ"
+  facebook: "",    // যেমন: "https://facebook.com/আপনার-পেজ"
+  twitter: "",     // যেমন: "https://twitter.com/আপনার-আইডি"
+  instagram: "",   // যেমন: "https://www.instagram.com/আপনার-আইডি"
+  linkedin: "",    // যেমন: "https://www.linkedin.com/company/আপনার-পেজ"
   tiktok: ""      // যেমন: "https://www.tiktok.com/@আপনার-আইডি"
 };

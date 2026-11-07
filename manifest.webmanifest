@@ -1,13 +1,13 @@
 {
-  "name": "খাঁটিঘর — খাঁটি তেল, মশলা, বাদাম ও মধু",
-  "short_name": "খাঁটিঘর",
-  "description": "১০০% খাঁটি তেল, মশলা, বাদাম ও মধু — সারাদেশে ক্যাশ অন ডেলিভারি",
+  "name": "KhatiGhor — Pure Oil, Spices, Nuts & Honey",
+  "short_name": "KhatiGhor",
+  "description": "100% pure oil, spices, nuts and honey — cash on delivery nationwide",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#F48721",
-  "lang": "bn",
+  "lang": "en",
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
     { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }

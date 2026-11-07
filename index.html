@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>খাঁটি ঘরের পণ্য | তেল, মশলা, বাদাম ও মধু</title>
-  <meta name="description" content="১০০% খাঁটি সরিষার তেল, মশলা, বাদাম ও মধু। সারাদেশে ক্যাশ অন ডেলিভারি।">
-  <meta property="og:title" content="খাঁটিঘর | খাঁটি তেল, মশলা, বাদাম ও মধু">
-  <meta property="og:description" content="ভেজালমুক্ত গ্রোসারি পণ্য, সারাদেশে ক্যাশ অন ডেলিভারি।">
+  <title>KhatiGhor | Pure Oil, Spices, Nuts & Honey</title>
+  <meta name="description" content="100% pure mustard oil, spices, nuts and honey. Cash on delivery all over the country.">
+  <meta property="og:title" content="KhatiGhor | Pure Oil, Spices, Nuts & Honey">
+  <meta property="og:description" content="Adulteration-free grocery products, cash on delivery nationwide.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#F48721">
   <meta name="color-scheme" content="light">
-  <script src="theme.js?v=21"></script>
-  <meta property="og:locale" content="bn_BD">
-  <!-- GitHub Pages এ তুললে নিচের লিংক নিজের সাইটের পূর্ণ ঠিকানা দিয়ে বদলান (README দেখুন) -->
-  <meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/images/og.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <script src="theme.js?v=36"></script>
+  <link rel="preconnect" href="https://script.google.com">
+  <link rel="preconnect" href="https://script.googleusercontent.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="config.js?v=36"></script>
+  <script src="prefetch.js?v=36"></script>
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="KhatiGhor">
+  <meta name="twitter:card" content="summary">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
@@ -22,172 +27,178 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/brands.css" integrity="sha512-xIB3YzA/p1m4qL0nHJGvISW0uMUiAoPXWmUXiPkE83ul4+EXk7bdnIadljj4Vo3i+nCyET1e+utnbJWXjn8QNg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="style.css?v=21">
-  <link rel="stylesheet" href="pages.css?v=21">
+  <link rel="stylesheet" href="style.css?v=39">
+  <link rel="stylesheet" href="pages.css?v=45">
 
-  <!-- Meta Pixel: কোড বসানোর দরকার নেই। config.js বা অ্যাডমিন > সেটিংসে শুধু Pixel ID দিন -->
+  <!-- Meta Pixel: no code needed. Just set the Pixel ID in config.js or Admin > Settings -->
 </head>
 <body data-page="home">
-  <a class="skip-link" href="#main">মূল কনটেন্টে যান</a>
-  <noscript><div class="noscript">⚠️ এই দোকান চালাতে ব্রাউজারে JavaScript চালু থাকতে হবে। অর্ডার করতে আমাদের কল করুন বা WhatsApp এ মেসেজ দিন।</div></noscript>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <noscript><div class="noscript">⚠️ JavaScript must be enabled in your browser to use this shop. To order, please call us or message us on WhatsApp.</div></noscript>
 
-  <!-- স্ক্রলিং ঘোষণা -->
-  <div class="marquee" aria-label="ঘোষণা"><div class="marquee-track" id="marqueeTrack"></div></div>
+  <!-- Scrolling announcement -->
+  <div class="marquee" aria-label="Announcements"><div class="marquee-track" id="marqueeTrack"></div></div>
 
-  <!-- উপরের মেনু -->
+  <!-- Top menu -->
   <header class="header">
     <div class="container header-inner">
-      <a href="index.html" class="logo brand-logo" aria-label="খাঁটিঘর হোম">
+      <a href="index.html" class="logo brand-logo" aria-label="KhatiGhor Home">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M7 17.5 20 7l13 10.5v15H7z"/><path d="M15 32V21h10v11"/><path d="M20 17c-4-5-8-2-7 1 1 3 6 3 7 3"/><path d="M20 17c4-5 8-2 7 1-1 3-6 3-7 3"/></svg></span>
-        <span class="brand-wordmark">খাঁটি<small>ঘর</small></span>
+        <span class="brand-wordmark">Khati<small>Ghor</small></span>
       </a>
       <form class="h-search" id="hSearchForm" role="search">
-        <input type="search" id="hSearch" placeholder="তেল, মধু, মশলা, বাদাম খুঁজুন..." aria-label="পণ্য খুঁজুন">
-        <button type="submit" aria-label="খুঁজুন"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+        <input type="search" id="hSearch" placeholder="Search: oil, তেল, honey, মধু…" aria-label="Search products">
+        <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
       </form>
       <div class="h-actions">
-        <a href="track.html" class="h-link h-action-link"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><small>অর্ডার ট্র্যাক</small></a>
-        <button type="button" class="h-icon h-wish h-action-button" id="wishOpen" aria-label="পছন্দের তালিকা" title="পছন্দের তালিকা"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><small>পছন্দ</small><b id="wishCount" hidden>০</b></button>
-        <button class="cart-btn h-action-button" id="cartOpen" aria-label="কার্ট দেখুন"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><small>কার্ট</small><b id="cartCount">০</b></button>
+        <a href="track.html" class="h-link h-action-link"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><small>Track Order</small></a>
+        <button type="button" class="h-icon h-wish h-action-button" id="wishOpen" aria-label="Wishlist" title="Wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><small>Wishlist</small><b id="wishCount" hidden>0</b></button>
+        <button class="cart-btn h-action-button" id="cartOpen" aria-label="View cart"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><small>Cart</small><b id="cartCount">0</b></button>
         <div class="h-more-wrap">
-          <button type="button" class="h-more-toggle h-action-button" id="moreToggle" aria-expanded="false" aria-controls="moreMenu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><small>আরও</small></button>
+          <button type="button" class="h-more-toggle h-action-button" id="moreToggle" aria-expanded="false" aria-controls="moreMenu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><small>Menu</small></button>
           <div class="h-more-menu" id="moreMenu" hidden>
-            <a href="shop.html">সব পণ্য</a><a href="cart.html">আপনার কার্ট</a><a href="track.html">অর্ডার ট্র্যাক</a><a href="#faq">সচরাচর জিজ্ঞাসা</a>
-            <button type="button" id="themeBtn" aria-pressed="false"><span id="themeIco" aria-hidden="true">☾</span> থিম বদলান</button>
+            <a href="shop.html"><i class="fa-solid fa-store" aria-hidden="true"></i> All Products</a><a href="shop.html?offer=1"><i class="fa-solid fa-fire" aria-hidden="true"></i> Best Offers</a><a href="cart.html"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> Your Cart</a><a href="track.html"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Track Order</a><hr><a href="#faq"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> FAQ</a><a href="terms.html"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Returns &amp; Terms</a><a href="privacy.html"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Privacy Policy</a><hr>
+            <button type="button" id="themeBtn" aria-pressed="false"><span id="themeIco" aria-hidden="true">☾</span> Change theme</button>
           </div>
         </div>
       </div>
     </div>
   </header>
-  <nav class="catbar" aria-label="ক্যাটাগরি">
+  <nav class="catbar" aria-label="Categories">
     <div class="container catbar-inner">
-      <a href="shop.html?offer=1" class="cat cat-offers">সেরা অফার</a>
+      <a href="shop.html?offer=1" class="cat cat-offers">Best Offers</a>
       <div class="cat-list" id="catNav"></div>
-      <div class="cat-links"><a href="shop.html">সব পণ্য</a><a href="#why">আমাদের সম্পর্কে</a></div>
+      <div class="cat-links"><a href="shop.html">All Products</a><a href="#why">About Us</a></div>
     </div>
   </nav>
 
   <main id="main" tabindex="-1">
-  <!-- হিরো সেকশন (স্লাইডার) -->
+  <!-- Hero section (slider) -->
   <section class="hero">
-    <h1 class="sr-only">খাঁটিঘর — ১০০% খাঁটি তেল, মশলা, বাদাম ও মধু | সারাদেশে ক্যাশ অন ডেলিভারি</h1>
+    <h1 class="sr-only">KhatiGhor — 100% Pure Oil, Spices, Nuts & Honey | Cash on Delivery Nationwide</h1>
     <div class="container hero-grid">
-      <div class="slider" id="slider" tabindex="0" aria-roledescription="carousel" aria-label="অফার ব্যানার">
+      <div class="slider" id="slider" tabindex="0" aria-roledescription="carousel" aria-label="Offer banners">
         <div class="slides" id="slides"></div>
-        <button type="button" class="sl-nav sl-prev" aria-label="আগের ব্যানার">‹</button>
-        <button type="button" class="sl-nav sl-next" aria-label="পরের ব্যানার">›</button>
+        <button type="button" class="sl-nav sl-prev" aria-label="Previous banner">‹</button>
+        <button type="button" class="sl-nav sl-next" aria-label="Next banner">›</button>
         <div class="sl-dots" id="slDots"></div>
       </div>
       <div class="hero-side">
-        <a href="#order" class="promo promo-a" id="promoA" hidden><span>🎁</span><div><b>বিশেষ ছাড়ের কুপন</b><small></small></div></a>
-        <a href="#why" class="promo promo-b"><img class="promo-product-img" src="images/honey.svg" alt=""><div><b>১০০% খাঁটি গ্যারান্টি</b><small>ভেজাল প্রমাণিত হলে ফেরত</small></div></a>
+        <a href="#order" class="promo promo-a" id="promoA" hidden><span>🎁</span><div><b>Special Discount Coupon</b><small></small></div></a>
+        <a href="#why" class="promo promo-b"><img class="promo-product-img" src="images/honey.svg" alt=""><div><b>100% Purity Guarantee</b><small>Refund if found adulterated</small></div></a>
       </div>
     </div>
   </section>
 
-  <!-- বিশ্বাস স্ট্রিপ -->
+  <!-- Trust strip -->
   <section class="trust">
     <div class="container">
       <div class="trust-grid">
-        <div class="trust-item"><span>🌱</span><div><b>১০০% খাঁটি</b><small>ভেজালমুক্ত পণ্য</small></div></div>
-        <div class="trust-item"><span>🚚</span><div><b>দ্রুত ডেলিভারি</b><small>সারাদেশে</small></div></div>
-        <div class="trust-item"><span>💵</span><div><b>ক্যাশ অন ডেলিভারি</b><small>হাতে পেয়ে পেমেন্ট</small></div></div>
-        <div class="trust-item"><span>↩️</span><div><b>৭ দিনের রিটার্ন</b><small>নিশ্চিন্তে কিনুন</small></div></div>
+        <div class="trust-item"><span>🌱</span><div><b>100% Pure</b><small>Adulteration-free products</small></div></div>
+        <div class="trust-item"><span>🚚</span><div><b>Fast Delivery</b><small>Nationwide</small></div></div>
+        <div class="trust-item"><span>💵</span><div><b>Cash on Delivery</b><small>Pay when you receive</small></div></div>
+        <div class="trust-item"><span>↩️</span><div><b>7-Day Returns</b><small>Shop with confidence</small></div></div>
       </div>
     </div>
   </section>
 
-  <!-- অফার কাউন্টডাউন -->
+  <!-- Offer countdown -->
   <section class="offer" id="offerBand" hidden>
     <div class="container offer-inner">
-      <strong id="offerText">🔥 বিশেষ অফার শেষ হতে বাকি:</strong>
+      <strong id="offerText">🔥 Special offer ends in:</strong>
       <div class="timer">
-        <div><b id="t-h">00</b><small>ঘণ্টা</small></div>
-        <div><b id="t-m">00</b><small>মিনিট</small></div>
-        <div><b id="t-s">00</b><small>সেকেন্ড</small></div>
+        <div><b id="t-h">00</b><small>Hours</small></div>
+        <div><b id="t-m">00</b><small>Minutes</small></div>
+        <div><b id="t-s">00</b><small>Seconds</small></div>
       </div>
     </div>
   </section>
 
-  <!-- ক্যাটাগরি অনুযায়ী কিনুন -->
+  <!-- Shop by category -->
   <section class="section tight" id="shopcats" hidden>
     <div class="container">
-      <span class="eyebrow">🗂️ ক্যাটাগরি</span>
-      <h2 class="title">জনপ্রিয় ক্যাটাগরি</h2>
+      <span class="eyebrow">🗂️ Categories</span>
+      <h2 class="title">Popular Categories</h2>
       <div class="cat-carousel">
-        <button type="button" class="cat-scroll-btn" id="catScrollPrev" aria-label="আগের ক্যাটাগরি">‹</button>
+        <button type="button" class="cat-scroll-btn" id="catScrollPrev" aria-label="Previous category">‹</button>
         <div class="cat-tiles" id="catTiles"><div class="cat-tiles-track" id="catTilesTrack"></div></div>
-        <button type="button" class="cat-scroll-btn" id="catScrollNext" aria-label="পরের ক্যাটাগরি">›</button>
+        <button type="button" class="cat-scroll-btn" id="catScrollNext" aria-label="Next category">›</button>
       </div>
     </div>
   </section>
 
-  <!-- "🔥 আজকের সেরা ডিল" এখন "টপ সেলিং পণ্য" এর ঠিক পরে নিজে বসে (script.js → renderHomeCatalog) -->
+  <!-- "Today's Best Deals" is inserted right after "Top Selling Products" (script.js → renderHomeCatalog) -->
 
-  <!-- হোমপেজের সব পণ্য ও ক্যাটাগরি-ভিত্তিক পণ্য -->
+  <!-- Home page: all products and category-wise products -->
   <section class="section home-catalog" id="homeProductSections">
     <div class="container" id="homeCatalog" aria-live="polite"></div>
   </section>
 
-  <!-- পণ্য -->
+  <!-- Customer reviews: shown right below "Load More" (only when approved reviews exist) -->
+  <section class="section home-reviews" id="reviews" aria-label="Customer reviews" hidden>
+    <div class="container">
+      <div id="featured"></div>
+    </div>
+  </section>
+
+  <!-- Products -->
   <section class="section" id="products">
     <div class="container">
-      <span class="eyebrow">🛍️ আমাদের সংগ্রহ</span>
-      <h2 class="title">আমাদের পণ্য</h2>
-      <p class="subtitle">পছন্দমতো ফিল্টার করে সহজেই খুঁজে নিন</p>
+      <span class="eyebrow">🛍️ Our Collection</span>
+      <h2 class="title">Our Products</h2>
+      <p class="subtitle">Filter to easily find what you like</p>
 
       <div class="shop-layout">
-        <!-- ফিল্টার (ডেস্কটপে সাইডবার, মোবাইলে নিচ থেকে ওঠে) -->
-        <aside class="filters" id="filters" aria-label="ফিল্টার">
+        <!-- Filters (sidebar on desktop, bottom sheet on mobile) -->
+        <aside class="filters" id="filters" aria-label="Filters">
           <div class="f-head">
-            <div class="f-title"><span class="f-ico" aria-hidden="true">⚙️</span><b>ফিল্টার</b><em id="fCount" hidden>০</em></div>
+            <div class="f-title"><span class="f-ico" aria-hidden="true">⚙️</span><b>Filters</b><em id="fCount" hidden>0</em></div>
             <div class="f-actions">
-              <button type="button" class="f-reset" id="fClear">সব রিসেট</button>
-              <button type="button" class="f-close" id="fClose" aria-label="ফিল্টার বন্ধ করুন">✕</button>
+              <button type="button" class="f-reset" id="fClear">Reset all</button>
+              <button type="button" class="f-close" id="fClose" aria-label="Close filters">✕</button>
             </div>
           </div>
           <div class="f-body">
             <details class="f-sec" open>
-              <summary>ক্যাটাগরি</summary>
+              <summary>Category</summary>
               <div class="f-cats" id="fCats"></div>
             </details>
             <details class="f-sec" open>
-              <summary>দামের পরিসীমা</summary>
+              <summary>Price range</summary>
               <div class="f-price">
-                <label class="pf"><span>৳</span><input type="number" id="pMin" min="0" inputmode="numeric" placeholder="সর্বনিম্ন" aria-label="সর্বনিম্ন দাম"></label>
+                <label class="pf"><span>৳</span><input type="number" id="pMin" min="0" inputmode="numeric" placeholder="Min" aria-label="Minimum price"></label>
                 <i aria-hidden="true">–</i>
-                <label class="pf"><span>৳</span><input type="number" id="pMax" min="0" inputmode="numeric" placeholder="সর্বোচ্চ" aria-label="সর্বোচ্চ দাম"></label>
+                <label class="pf"><span>৳</span><input type="number" id="pMax" min="0" inputmode="numeric" placeholder="Max" aria-label="Maximum price"></label>
               </div>
               <div class="f-ranges">
-                <button type="button" class="f-range" data-price="0-300">৳৩০০ এর নিচে</button>
-                <button type="button" class="f-range" data-price="300-700">৳৩০০–৭০০</button>
-                <button type="button" class="f-range" data-price="700-">৳৭০০+</button>
+                <button type="button" class="f-range" data-price="0-300">Under ৳300</button>
+                <button type="button" class="f-range" data-price="300-700">৳300–700</button>
+                <button type="button" class="f-range" data-price="700-">৳700+</button>
               </div>
             </details>
             <details class="f-sec" open>
-              <summary>অবস্থা ও রেটিং</summary>
-              <label class="f-check"><span>শুধু স্টকে আছে</span><input type="checkbox" id="fStock" role="switch"></label>
-              <label class="f-check"><span>শুধু ছাড়ের পণ্য</span><input type="checkbox" id="fOffer" role="switch"></label>
-              <label class="f-check"><span>⭐ ৪ ও তার বেশি রেটিং</span><input type="checkbox" id="fRated" role="switch"></label>
+              <summary>Availability & rating</summary>
+              <label class="f-check"><span>In stock only</span><input type="checkbox" id="fStock" role="switch"></label>
+              <label class="f-check"><span>Discounted products only</span><input type="checkbox" id="fOffer" role="switch"></label>
+              <label class="f-check"><span>⭐ 4 stars & above</span><input type="checkbox" id="fRated" role="switch"></label>
             </details>
           </div>
-          <div class="f-foot"><button type="button" class="btn btn-block f-apply" id="fApply">পণ্য দেখুন</button></div>
+          <div class="f-foot"><button type="button" class="btn btn-block f-apply" id="fApply">Show products</button></div>
         </aside>
 
         <div class="shop-main">
           <div class="shop-top">
             <p class="result-count" id="resultCount" role="status" aria-live="polite" aria-atomic="true"></p>
             <div class="shop-top-right">
-              <button type="button" class="filter-open" id="filterOpen" aria-controls="filters" aria-expanded="false">🎛️ ফিল্টার <b id="filterBadge" hidden>০</b></button>
-              <select id="sort" aria-label="সাজান">
-                <option value="">সাজান: ডিফল্ট</option>
-                <option value="low">দাম: কম থেকে বেশি</option>
-                <option value="high">দাম: বেশি থেকে কম</option>
-                <option value="disc">সবচেয়ে বেশি ছাড়</option>
-                <option value="rate">সর্বোচ্চ রেটিং</option>
-                <option value="new">নতুন পণ্য</option>
-                <option value="name">নাম অনুযায়ী</option>
+              <button type="button" class="filter-open" id="filterOpen" aria-controls="filters" aria-expanded="false">🎛️ Filters <b id="filterBadge" hidden>0</b></button>
+              <select id="sort" aria-label="Sort">
+                <option value="">Sort: Default</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="disc">Biggest discount</option>
+                <option value="rate">Top rated</option>
+                <option value="new">New arrivals</option>
+                <option value="name">By name</option>
               </select>
             </div>
           </div>
@@ -198,139 +209,130 @@
     </div>
   </section>
 
-  <!-- কেন আমরা -->
+  <!-- Why us -->
   <section class="section alt" id="why">
     <div class="container reveal">
-      <span class="eyebrow">✨ কেন আমরা</span>
-      <h2 class="title">কেন আমাদের থেকে কিনবেন?</h2>
+      <span class="eyebrow">✨ Why Us</span>
+      <h2 class="title">Why Buy From Us?</h2>
       <div class="features">
-        <div class="feature"><span>🌱</span><h3>১০০% খাঁটি</h3><p>কোনো কেমিক্যাল বা ভেজাল ছাড়া সরাসরি উৎস থেকে সংগ্রহ।</p></div>
-        <div class="feature"><span>📦</span><h3>নিরাপদ প্যাকেজিং</h3><p>পণ্য সুন্দরভাবে সিল করা ও সুরক্ষিত প্যাকেটে পাঠানো হয়।</p></div>
-        <div class="feature"><span>🚚</span><h3>দ্রুত ডেলিভারি</h3><p>ঢাকায় ১-২ দিন, ঢাকার বাইরে ২-৩ দিনের মধ্যে ডেলিভারি।</p></div>
-        <div class="feature"><span>💵</span><h3>ক্যাশ অন ডেলিভারি</h3><p>পণ্য হাতে পেয়ে দেখে তারপর টাকা পরিশোধ করুন।</p></div>
+        <div class="feature"><span>🌱</span><h3>100% Pure</h3><p>Sourced directly, with no chemicals or adulteration.</p></div>
+        <div class="feature"><span>📦</span><h3>Safe Packaging</h3><p>Products are neatly sealed and shipped in protective packaging.</p></div>
+        <div class="feature"><span>🚚</span><h3>Fast Delivery</h3><p>1-2 days inside Dhaka, 2-3 days outside Dhaka.</p></div>
+        <div class="feature"><span>💵</span><h3>Cash on Delivery</h3><p>Inspect your products first, then pay on delivery.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- রিভিউ -->
-  <section class="section" id="reviews" hidden>
-    <div class="container reveal">
-      <span class="eyebrow">💬 ক্রেতাদের কথা</span>
-      <h2 class="title">ক্রেতাদের মতামত</h2>
-      <div class="reviews" id="featured"></div>
-    </div>
-  </section>
-
-  <!-- চেকআউট -->
+  <!-- Checkout -->
   <section class="section alt" id="order">
     <div class="container checkout-wrap">
-      <span class="eyebrow">🔒 নিরাপদ চেকআউট</span>
-      <h2 class="title">চেকআউট</h2>
-      <p class="subtitle">তথ্য দিয়ে অর্ডার কনফার্ম করুন</p>
+      <span class="eyebrow">🔒 Secure Checkout</span>
+      <h2 class="title">Checkout</h2>
+      <p class="subtitle">Enter your details to confirm your order</p>
 
       <div class="success" id="success" hidden></div>
       <div class="checkout-empty" id="checkoutEmpty">
         <span aria-hidden="true">🛒</span>
-        <h3>আপনার কার্ট এখন খালি</h3>
-        <p>পছন্দের পণ্য কার্টে যোগ করলে এখানেই চেকআউট করতে পারবেন।</p>
-        <a href="#products" class="btn">পণ্য দেখুন</a>
+        <h3>Your cart is empty</h3>
+        <p>Add products to your cart and check out right here.</p>
+        <a href="#products" class="btn">Browse products</a>
       </div>
 
       <form id="orderForm" class="checkout" novalidate>
-        <!-- বাঁ পাশ: ডেলিভারির ঠিকানা ও পেমেন্ট -->
+        <!-- Left: delivery address and payment -->
         <div class="co-main form">
-          <h3 class="co-h"><span>১</span> ডেলিভারির তথ্য</h3>
+          <h3 class="co-h"><span>1</span> Delivery details</h3>
           <div class="co-row">
-            <label>আপনার নাম *
-              <input type="text" name="name" placeholder="যেমন: মোহাম্মদ রহিম" autocomplete="name" required>
+            <label>Your name *
+              <input type="text" name="name" placeholder="e.g. John Smith" autocomplete="name" required>
             </label>
-            <label>মোবাইল নম্বর *
+            <label>Mobile number *
               <input type="tel" name="phone" placeholder="01XXXXXXXXX" maxlength="11" inputmode="numeric" autocomplete="tel" required>
             </label>
           </div>
           <div class="co-row">
-            <label><span class="lb">ইমেইল <small>(ঐচ্ছিক)</small></span>
+            <label><span class="lb">Email <small>(optional)</small></span>
               <input type="email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="80">
             </label>
-            <label>ডেলিভারি এলাকা *
+            <label>Delivery area *
               <select name="area" id="areaSelect" required></select>
             </label>
           </div>
-          <label>সম্পূর্ণ ঠিকানা *
-            <textarea name="address" rows="3" placeholder="বাসা/রোড, থানা, জেলা" autocomplete="street-address" required></textarea>
+          <label>Full address *
+            <textarea name="address" rows="3" placeholder="House/Road, Thana, District" autocomplete="street-address" required></textarea>
           </label>
-          <label><span class="lb">অর্ডারের নোট <small>(ঐচ্ছিক)</small></span>
-            <input type="text" name="note" placeholder="যেমন: কল দিয়ে আসবেন" maxlength="200">
+          <label><span class="lb">Order note <small>(optional)</small></span>
+            <input type="text" name="note" placeholder="e.g. Please call before arriving" maxlength="200">
           </label>
 
-          <h3 class="co-h"><span>২</span> পেমেন্ট পদ্ধতি</h3>
+          <h3 class="co-h"><span>2</span> Payment method</h3>
           <fieldset class="pay">
-            <legend class="sr-only">পেমেন্ট পদ্ধতি</legend>
-            <label class="pay-opt"><input type="radio" name="payMethod" value="cod" checked><span class="po-ico">💵</span><span class="po-name">ক্যাশ অন ডেলিভারি</span></label>
-            <label class="pay-opt"><input type="radio" name="payMethod" value="bkash"><span class="po-ico">📱</span><span class="po-name">বিকাশ</span></label>
-            <label class="pay-opt"><input type="radio" name="payMethod" value="nagad"><span class="po-ico">📱</span><span class="po-name">নগদ</span></label>
+            <legend class="sr-only">Payment method</legend>
+            <label class="pay-opt"><input type="radio" name="payMethod" value="cod" checked><span class="po-ico">💵</span><span class="po-name">Cash on Delivery</span></label>
+            <label class="pay-opt"><input type="radio" name="payMethod" value="bkash"><span class="po-ico">📱</span><span class="po-name">bKash</span></label>
+            <label class="pay-opt"><input type="radio" name="payMethod" value="nagad"><span class="po-ico">📱</span><span class="po-name">Nagad</span></label>
           </fieldset>
           <div class="pay-info" id="payInfo" hidden>
             <p id="payHelp"></p>
-            <input type="text" name="trxId" placeholder="ট্রানজেকশন আইডি (TrxID)" maxlength="30">
+            <input type="text" name="trxId" placeholder="Transaction ID (TrxID)" maxlength="30">
           </div>
 
-          <!-- স্প্যাম আটকানোর লুকানো ঘর, এটি ফাঁকা রাখতে হবে -->
+          <!-- Hidden anti-spam field; must stay empty -->
           <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
         </div>
 
-        <!-- ডান পাশ: অর্ডার সামারি, কুপন, হিসাব ও কনফার্ম -->
-        <aside class="co-side form" aria-label="অর্ডার সামারি">
-          <h3 class="co-h"><span>৩</span> অর্ডার সামারি</h3>
+        <!-- Right: order summary, coupon, totals and confirm -->
+        <aside class="co-side form" aria-label="Order summary">
+          <h3 class="co-h"><span>3</span> Order summary</h3>
           <div id="checkoutItems" class="checkout-items"></div>
 
           <div class="coupon">
-            <input type="text" id="couponInput" placeholder="কুপন কোড (থাকলে)" aria-label="কুপন কোড">
-            <button type="button" class="btn btn-small" id="couponBtn">প্রয়োগ</button>
+            <input type="text" id="couponInput" placeholder="Coupon code (if any)" aria-label="Coupon code">
+            <button type="button" class="btn btn-small" id="couponBtn">Apply</button>
           </div>
           <p class="coupon-msg" id="couponMsg"></p>
 
           <div id="fdCheckout"></div>
           <div class="summary">
-            <div><span>পণ্যের দাম</span><b id="sumPrice">৳০</b></div>
-            <div><span>ডেলিভারি চার্জ</span><b id="sumDelivery">৳০</b></div>
-            <div id="saveRow" class="save-row" hidden><span>🎉 আপনি সাশ্রয় করছেন</span><b id="sumSave">৳০</b></div>
-            <div id="discountRow" hidden><span>কুপন ছাড়</span><b id="sumDiscount">−৳০</b></div>
-            <div class="total"><span>সর্বমোট</span><b id="sumTotal">৳০</b></div>
+            <div><span>Subtotal</span><b id="sumPrice">৳0</b></div>
+            <div><span>Delivery charge</span><b id="sumDelivery">৳0</b></div>
+            <div id="saveRow" class="save-row" hidden><span>🎉 You are saving</span><b id="sumSave">৳0</b></div>
+            <div id="discountRow" hidden><span>Coupon discount</span><b id="sumDiscount">−৳0</b></div>
+            <div class="total"><span>Total</span><b id="sumTotal">৳0</b></div>
           </div>
 
-          <button type="submit" class="btn btn-block" id="submitBtn">✅ অর্ডার কনফার্ম করুন</button>
+          <button type="submit" class="btn btn-block" id="submitBtn">✅ Confirm order</button>
           <p class="form-msg" id="formMsg" role="alert"></p>
-          <p class="co-note">🔒 আপনার তথ্য সম্পূর্ণ নিরাপদ। অর্ডারের পর আমরা কল করে কনফার্ম করব।</p>
+          <p class="co-note">🔒 Your information is completely safe. We will call to confirm after you order.</p>
         </aside>
       </form>
     </div>
   </section>
 
-  <!-- অর্ডার ট্র্যাকিং -->
+  <!-- Order tracking -->
   <section class="section" id="track">
     <div class="container order-wrap">
-      <span class="eyebrow">📦 ট্র্যাকিং</span>
-      <h2 class="title">অর্ডার ট্র্যাক করুন</h2>
-      <p class="subtitle">অর্ডার আইডি ও মোবাইল নম্বর দিন</p>
+      <span class="eyebrow">📦 Tracking</span>
+      <h2 class="title">Track Your Order</h2>
+      <p class="subtitle">Enter your order ID and mobile number</p>
       <form id="trackForm" class="form" novalidate>
-        <input type="text" name="oid" placeholder="অর্ডার আইডি (যেমন KG251102-101)" required>
+        <input type="text" name="oid" placeholder="Order ID (e.g. KG251102-101)" required>
         <input type="tel" name="phone" placeholder="01852677251" maxlength="11" inputmode="numeric" required>
-        <button type="submit" class="btn btn-block">🔍 খুঁজুন</button>
+        <button type="submit" class="btn btn-block">🔍 Find order</button>
         <div id="trackResult"></div>
       </form>
     </div>
   </section>
 
-  <!-- প্রশ্নোত্তর -->
+  <!-- FAQ -->
   <section class="section alt" id="faq">
     <div class="container faq reveal">
-      <span class="eyebrow">❓ সাহায্য</span>
-      <h2 class="title">সচরাচর জিজ্ঞাসা</h2>
-      <details><summary>ডেলিভারি কতদিনে পাব?</summary><p>ঢাকায় ১-২ দিন এবং ঢাকার বাইরে ২-৩ কার্যদিবসের মধ্যে।</p></details>
-      <details><summary>পণ্য পছন্দ না হলে কী করব?</summary><p>পণ্য পাওয়ার ৭ দিনের মধ্যে আমাদের জানান, আমরা পরিবর্তন বা ফেরতের ব্যবস্থা করব।</p></details>
-      <details><summary>অর্ডারের আগে কি টাকা দিতে হবে?</summary><p>না, ক্যাশ অন ডেলিভারিতে পণ্য হাতে পেয়ে দেখে তারপর টাকা দিলেই হবে। চাইলে বিকাশ/নগদেও পরিশোধ করা যায়।</p></details>
-      <details><summary>একসাথে একাধিক পণ্য নেওয়া যাবে?</summary><p>হ্যাঁ। যত খুশি পণ্য কার্টে যোগ করে একসাথে অর্ডার করুন।</p></details>
+      <span class="eyebrow">❓ Help</span>
+      <h2 class="title">Frequently Asked Questions</h2>
+      <details><summary>How long does delivery take?</summary><p>1-2 days inside Dhaka and 2-3 working days outside Dhaka.</p></details>
+      <details><summary>What if I do not like the product?</summary><p>Let us know within 7 days of receiving it and we will arrange an exchange or refund.</p></details>
+      <details><summary>Do I have to pay before ordering?</summary><p>No. With cash on delivery you pay after you receive and inspect the product. You can also pay via bKash/Nagad.</p></details>
+      <details><summary>Can I order multiple products together?</summary><p>Yes. Add as many products as you like to your cart and order them together.</p></details>
     </div>
   </section>
 
@@ -340,25 +342,25 @@
     <div class="container">
       <div class="footer-grid">
         <div class="f-brand">
-          <a href="index.html" class="logo brand-logo" aria-label="খাঁটিঘর হোম"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M7 17.5 20 7l13 10.5v15H7z"/><path d="M15 32V21h10v11"/><path d="M20 17c-4-5-8-2-7 1 1 3 6 3 7 3"/><path d="M20 17c4-5 8-2 7 1-1 3-6 3-7 3"/></svg></span><span class="brand-wordmark">খাঁটি<small>ঘর</small></span></a>
-          <p>ভেজালমুক্ত তেল, মশলা, বাদাম ও মধু — সরাসরি উৎস থেকে আপনার ঘরে। বিশ্বাস ও মানই আমাদের পরিচয়।</p>
+          <a href="index.html" class="logo brand-logo" aria-label="KhatiGhor Home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M7 17.5 20 7l13 10.5v15H7z"/><path d="M15 32V21h10v11"/><path d="M20 17c-4-5-8-2-7 1 1 3 6 3 7 3"/><path d="M20 17c4-5 8-2 7 1-1 3-6 3-7 3"/></svg></span><span class="brand-wordmark">Khati<small>Ghor</small></span></a>
+          <p>Adulteration-free oil, spices, nuts and honey — straight from the source to your home. Trust and quality define us.</p>
         </div>
         <div>
-          <h4>কেনাকাটা</h4>
+          <h4>Shop</h4>
           <div class="footer-links" id="ftCats"></div>
         </div>
         <div>
-          <h4>সাহায্য</h4>
+          <h4>Help</h4>
           <div class="footer-links">
-            <a href="track.html">অর্ডার ট্র্যাক করুন</a>
-            <a href="#faq">সচরাচর জিজ্ঞাসা</a>
-            <a href="terms.html">রিটার্ন ও রিফান্ড পলিসি</a>
-            <a href="terms.html">শর্তাবলী</a>
-            <a href="privacy.html">গোপনীয়তা নীতি</a>
+            <a href="track.html">Track your order</a>
+            <a href="#faq">FAQ</a>
+            <a href="terms.html">Return & Refund Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
           </div>
         </div>
         <div>
-          <h4>যোগাযোগ</h4>
+          <h4>Contact</h4>
           <div class="footer-links f-contact">
             <p id="ftEmailRow"><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="#" id="ftEmail"></a></p>
             <p><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="#" id="ftPhoneLink"><span id="ftPhone">01852677251</span></a></p>
@@ -366,77 +368,79 @@
             <p id="ftHoursRow" hidden><i class="fa-regular fa-clock" aria-hidden="true"></i><span id="ftHours"></span></p>
           </div>
           <div class="social f-social">
-            <a href="#" id="ftFb" class="s-fb" target="_blank" rel="noopener noreferrer" aria-label="ফেসবুক" title="Facebook" hidden><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="#" id="ftTw" class="s-tw" target="_blank" rel="noopener noreferrer" aria-label="টুইটার" title="Twitter" hidden><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
-            <a href="#" id="ftIg" class="s-ig" target="_blank" rel="noopener noreferrer" aria-label="ইনস্টাগ্রাম" title="Instagram" hidden><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" id="ftLi" class="s-li" target="_blank" rel="noopener noreferrer" aria-label="লিংকডইন" title="LinkedIn" hidden><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-            <a href="#" id="ftTk" class="s-tk" target="_blank" rel="noopener noreferrer" aria-label="টিকটক" title="TikTok" hidden><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
-            <a href="#" id="ftWa" class="s-wa" target="_blank" rel="noopener noreferrer" aria-label="হোয়াটসঅ্যাপ" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="#" id="ftFb" class="s-fb" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" hidden><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" id="ftTw" class="s-tw" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter" hidden><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" id="ftIg" class="s-ig" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" hidden><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" id="ftLi" class="s-li" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" hidden><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" id="ftTk" class="s-tk" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok" hidden><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+            <a href="#" id="ftWa" class="s-wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
-      <div class="footer-pay"><img src="images/sslcommerz.png" alt="SSLCommerz — নিরাপদ পেমেন্ট গেটওয়ে" width="2647" height="427" loading="lazy"></div>
+      <div class="footer-pay"><picture><source srcset="images/sslcommerz.webp" type="image/webp"><img src="images/sslcommerz.png" alt="SSLCommerz — Secure Payment Gateway" width="2647" height="427" loading="lazy" decoding="async"></picture></div>
       <div class="footer-bottom">
-        <span>© <span id="ftYear">2026</span> খাঁটিঘর। সর্বস্বত্ব সংরক্ষিত। · Developed by <b>Almas Forhadi</b></span>
+        <span>© <span id="ftYear">2026</span> KhatiGhor. All rights reserved. · Developed by <b>Almas Forhadi</b></span>
       </div>
     </div>
   </footer>
 
-  <!-- কার্ট ড্রয়ার -->
+  <!-- Cart drawer -->
   <div class="overlay" id="overlay" hidden></div>
-  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="শপিং কার্ট" aria-hidden="true">
-    <div class="drawer-head"><h3>🛒 আপনার কার্ট</h3><button id="cartClose" aria-label="বন্ধ করুন">✕</button></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-head"><h3>🛒 Your Cart</h3><button id="cartClose" aria-label="Close">✕</button></div>
     <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-upsell" id="drawerUpsell" hidden>
+      <div class="up-head"><b>You may also like</b><span class="up-arrows"><button type="button" data-up="-1" aria-label="Previous">‹</button><button type="button" data-up="1" aria-label="Next">›</button></span></div>
+      <div class="up-track" id="upTrack"></div>
+    </div>
     <div class="drawer-foot">
       <div id="fdDrawer"></div>
       <div class="save-chip" id="saveDrawer" hidden></div>
-      <div class="drawer-total"><span>সাবটোটাল</span><b id="drawerTotal">৳০</b></div>
-      <a href="checkout.html" class="btn btn-block" id="goCheckout">চেকআউটে যান →</a>
+      <div class="drawer-total"><span>Subtotal</span><b id="drawerTotal">৳0</b></div>
+      <a href="checkout.html" class="btn btn-block" id="goCheckout">Go to checkout →</a>
     </div>
   </aside>
 
-  <!-- পছন্দের তালিকা ড্রয়ার -->
-  <aside class="drawer" id="wishDrawer" role="dialog" aria-modal="true" aria-label="পছন্দের তালিকা" aria-hidden="true">
-    <div class="drawer-head"><h3>❤️ পছন্দের তালিকা</h3><button id="wishClose" aria-label="বন্ধ করুন">✕</button></div>
+  <!-- Wishlist drawer -->
+  <aside class="drawer" id="wishDrawer" role="dialog" aria-modal="true" aria-label="Wishlist" aria-hidden="true">
+    <div class="drawer-head"><h3>❤️ Wishlist</h3><button id="wishClose" aria-label="Close">✕</button></div>
     <div class="drawer-body" id="wishBody"></div>
     <div class="drawer-foot">
-      <button type="button" class="btn btn-block" id="wishAddAll">🛒 সবগুলো কার্টে যোগ করুন</button>
-      <button type="button" class="btn btn-outline btn-block" id="wishToCart">কার্ট দেখুন</button>
+      <button type="button" class="btn btn-block" id="wishAddAll">🛒 Add all to cart</button>
+      <button type="button" class="btn btn-outline btn-block" id="wishToCart">View cart</button>
     </div>
   </aside>
 
-  <button type="button" class="floating-cart" id="floatingCart" aria-label="কার্ট খুলুন">
+  <button type="button" class="floating-cart" id="floatingCart" aria-label="Open cart">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-    <span><b id="floatingCartCount">০</b> পণ্য</span><strong id="floatingCartTotal">৳০</strong>
+    <span><b id="floatingCartCount">0</b> items</span><strong id="floatingCartTotal">৳০</strong>
   </button>
 
-  <!-- পণ্য বিস্তারিত (কুইক ভিউ) -->
-  <dialog class="qv" id="qv" aria-label="পণ্যের বিস্তারিত"><div id="qvBody"></div></dialog>
+  <!-- Product details (quick view) -->
+  <dialog class="qv" id="qv" aria-label="Product details"><div id="qvBody"></div></dialog>
 
-  <!-- মোবাইল বটম নেভিগেশন -->
-  <nav class="bottom-nav" aria-label="মোবাইল মেনু">
-    <a href="index.html" class="bn-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/></svg><small>হোম</small></a>
-    <a href="shop.html" class="bn-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.2"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.2"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.2"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.2"/></svg><small>শপ</small></a>
-    <button type="button" class="bn-item" id="bnWish"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5 4.6 13.3a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9a4.6 4.6 0 0 1 6.5 6.5z"/></svg><small>পছন্দ</small><b id="bnWishCount" hidden>০</b></button>
-    <button type="button" class="bn-item" id="bnCart"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><small>কার্ট</small><b id="bnCount" hidden>০</b></button>
-    <a href="track.html" class="bn-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><small>ট্র্যাক</small></a>
+  <!-- Mobile bottom navigation -->
+  <nav class="bottom-nav" aria-label="Mobile menu">
+    <a href="index.html" class="bn-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/></svg><small>Home</small></a>
+    <a href="shop.html" class="bn-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.2"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.2"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.2"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.2"/></svg><small>Shop</small></a>
+    <button type="button" class="bn-item" id="bnWish"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5 4.6 13.3a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9a4.6 4.6 0 0 1 6.5 6.5z"/></svg><small>Wishlist</small><b id="bnWishCount" hidden>0</b></button>
+    <button type="button" class="bn-item" id="bnCart"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><small>Cart</small><b id="bnCount">0</b></button>
+    <a href="track.html" class="bn-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><small>Track</small></a>
   </nav>
 
   <div class="toast" id="toast" role="status"></div>
 
-  <!-- উপরে যাওয়ার বাটন: ৬০০px স্ক্রলের পর আসে, রিং দেখায় কতটা নামা হয়েছে -->
-  <button type="button" class="scroll-top" id="toTop" aria-label="পেজের উপরে যান">
+  <!-- Back-to-top button: appears after 600px of scrolling; the ring shows scroll progress -->
+  <button type="button" class="scroll-top" id="toTop" aria-label="Back to top">
     <svg class="st-ring" viewBox="0 0 44 44" aria-hidden="true"><circle class="st-trk" cx="22" cy="22" r="19"/><circle class="st-bar" id="toTopBar" cx="22" cy="22" r="19"/></svg>
     <svg class="st-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   </button>
 
-  <!-- ভাসমান হোয়াটসঅ্যাপ বাটন (কাঁপে) -->
-  <a class="float wa" id="waBtn" href="#" target="_blank" rel="noopener" aria-label="হোয়াটসঅ্যাপে মেসেজ করুন">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    </a>
-
-  <script src="config.js?v=21"></script>
-  <script src="script.js?v=21"></script>
+  <!-- Floating chat button -->
+  <a class="float wa" id="waBtn" href="#" target="_blank" rel="noopener" aria-label="Message us on WhatsApp"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i></a>
+  <script src="search-lang.js?v=36"></script>
+  <script src="search-suggest.js?v=36"></script>
+  <script src="script.js?v=40"></script>
   <script>var y=document.getElementById("ftYear");if(y)y.textContent=new Date().getFullYear();</script>
   <script>
   (function () {
@@ -469,5 +473,6 @@
     });
   })();
   </script>
+  <script src="catbar.js?v=37" defer></script>
 </body>
 </html>

@@ -118,9 +118,19 @@ dialog .form { box-shadow: none; border: 0; max-height: 90vh; overflow-y: auto; 
 .img-prev.has span { display: none; }
 .img-row { display: flex; gap: 8px; }
 .img-row input { flex: 1; min-width: 0; }
+.img-row textarea { flex: 1; min-width: 0; resize: vertical; }
 .img-row button { white-space: nowrap; }
 .up-btn { border: 1.5px solid var(--green); background: #fff; color: var(--green); border-radius: 10px; padding: 0 12px; font-weight: 600; cursor: pointer; }
 .up-btn:disabled { opacity: .6; cursor: wait; }
+.product-gallery-preview { display: flex; flex-wrap: wrap; gap: 8px; }
+.product-gallery-thumb { position: relative; width: 68px; height: 68px; border: 1px solid var(--border); border-radius: 9px; background: #fff; overflow: hidden; }
+.product-gallery-thumb img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.product-gallery-thumb img[hidden] { display: none; }
+.product-gallery-thumb .product-gallery-error { position: absolute; inset: 0; display: grid; place-content: center; padding: 5px; background: #fff3f1; color: #a3261e; font-size: .58rem; line-height: 1.25; text-align: center; }
+.product-gallery-thumb .product-gallery-error[hidden] { display: none; }
+.img-prev.image-error { border-color: #c83d32; background: #fff3f1; color: #a3261e; padding: 8px; text-align: center; }
+.product-gallery-thumb button { position: absolute; top: 3px; right: 3px; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: rgba(25, 35, 29, .78); color: #fff; line-height: 1; cursor: pointer; }
+.product-gallery-field .a-hint { margin: 0; }
 @media (max-width: 800px) {
   .dash-grid { grid-template-columns: 1fr; }
   .sl-card { grid-template-columns: 1fr; }
@@ -129,3 +139,9 @@ dialog .form { box-shadow: none; border: 0; max-height: 90vh; overflow-y: auto; 
 
 #settingsForm h3 { color: var(--green-dark); margin: 6px 0 0; padding-top: 12px; border-top: 1px solid var(--border); font-size: 1.05rem; }
 #settingsForm h3:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+
+/* ফুটার ক্যাটাগরি বাছাই */
+.footer-cat-picks { display: flex; flex-wrap: wrap; gap: 8px; }
+.fc-pick { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid #ddd; border-radius: 999px; background: #fff; cursor: pointer; font-size: .9rem; }
+.fc-pick:has(input:checked) { border-color: #F48721; background: #fff2e4; }
+.fc-pick:has(input:disabled) { opacity: .5; cursor: not-allowed; }

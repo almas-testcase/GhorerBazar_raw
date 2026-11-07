@@ -1,150 +1,352 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>অ্যাডমিন প্যানেল | খাঁটিঘর</title>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Admin Panel | KhatiGhor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=21">
-  <link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="style.css?v=38">
+  <link rel="stylesheet" href="admin.css?v=5">
+  <link rel="stylesheet" href="admin-layout.css?v=5">
+  <link rel="stylesheet" href="admin-theme.css?v=13">
 </head>
 <body class="admin">
 
-  <!-- লগইন -->
+  <!-- Login -->
   <div class="login" id="login">
     <form class="form" id="loginForm">
-      <h2>🔐 অ্যাডমিন লগইন</h2>
-      <input type="password" id="pass" placeholder="পাসওয়ার্ড" autocomplete="current-password" required>
-      <button class="btn btn-block" type="submit">লগইন</button>
+      <h2>🔐 Admin login</h2>
+      <input type="password" id="pass" placeholder="Password" autocomplete="current-password" required>
+      <button class="btn btn-block" type="submit">Log in</button>
       <p class="form-msg" id="loginMsg"></p>
     </form>
   </div>
 
-  <!-- ড্যাশবোর্ড -->
-  <div id="app" hidden>
-    <header class="a-head">
-      <b>🌿 খাঁটিঘর অ্যাডমিন</b>
-      <nav class="a-tabs" id="tabs">
-        <button data-tab="dash" class="active">📊 ড্যাশবোর্ড</button>
-        <button data-tab="orders">📦 অর্ডার</button>
-        <button data-tab="slides">🖼️ স্লাইডার</button>
-        <button data-tab="categories">🗂️ ক্যাটাগরি</button>
-        <button data-tab="products">🛍️ পণ্য</button>
-        <button data-tab="coupons">🎟️ কুপন</button>
-        <button data-tab="reviews">⭐ রিভিউ</button>
-        <button data-tab="notify">🔔 নোটিফিকেশন</button>
-        <button data-tab="settings">⚙️ সেটিংস</button>
-      </nav>
-      <span><button class="btn btn-small btn-outline" id="refresh">🔄</button> <button class="btn btn-small btn-outline" id="logout">লগআউট</button></span>
-    </header>
+  <!-- ADMIN APP SHELL: sidebar + topbar + views. Design (CSS) is added later; image slots are marked with data-image-slot. -->
+  <div id="app" class="adm-shell" hidden>
 
-    <main class="a-main">
-      <section id="tab-dash">
-        <div class="stats" id="stats"></div>
-        <div class="dash-grid">
-          <div class="a-card chart-card">
-            <div class="chart-head">
-              <div><h3>গত ৭ দিনের বিক্রি</h3><p class="a-hint" id="salesSub"></p></div>
-              <button class="btn btn-small btn-outline" id="chartToggle" type="button">📋 টেবিল</button>
-            </div>
-            <div id="salesChart"></div>
-            <div id="salesTable" hidden></div>
-            <div class="chart-tip" id="chartTip" hidden></div>
-          </div>
-          <div class="dash-side">
-            <div class="a-card"><h3>অর্ডারের অবস্থা</h3><div id="statusBars" class="hbars"></div></div>
-            <div class="a-card"><h3>সর্বাধিক বিক্রিত পণ্য</h3><div id="topProducts" class="hbars"></div></div>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="adm-sidebar" id="admSidebar" aria-label="Main navigation">
+      <a class="adm-brand" href="admin.html" aria-label="KhatiGhor admin home">
+        <span class="adm-brand-logo" data-image-slot="admin-logo" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="40" height="40"><path d="M7 17.5 20 7l13 10.5v15H7z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 32V21h10v11" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </span>
+        <span class="adm-brand-text"><b>KhatiGhor</b><small>Shop Smart · Live Better</small></span>
+      </a>
+
+      <nav class="adm-nav" id="tabs">
+        <button type="button" class="adm-nav-item active" data-tab="dash"><span class="adm-ico" data-ico="dashboard" aria-hidden="true"></span><span class="adm-label">Dashboard</span></button>
+
+        <div class="adm-group" data-group="catalog">
+          <button type="button" class="adm-nav-item adm-nav-parent" aria-expanded="false"><span class="adm-ico" data-ico="products" aria-hidden="true"></span><span class="adm-label">Products</span><span class="adm-caret" aria-hidden="true"></span></button>
+          <div class="adm-sub" hidden>
+            <button type="button" class="adm-nav-sub" data-tab="products">All Products</button>
+            <button type="button" class="adm-nav-sub" data-tab="categories">Categories</button>
           </div>
         </div>
-        <h3>⚠️ কম স্টকের পণ্য</h3>
-        <div id="lowStock" class="a-card"></div>
-        <h3>সাম্প্রতিক অর্ডার</h3>
-        <div id="recent" class="a-card"></div>
+
+        <button type="button" class="adm-nav-item" data-tab="orders"><span class="adm-ico" data-ico="orders" aria-hidden="true"></span><span class="adm-label">Orders</span><span class="adm-count" id="navOrdersCount" hidden>0</span></button>
+        <button type="button" class="adm-nav-item" data-tab="courier"><span class="adm-ico" data-ico="courier" aria-hidden="true"></span><span class="adm-label">Courier</span></button>
+        <button type="button" class="adm-nav-item" data-tab="customers"><span class="adm-ico" data-ico="customers" aria-hidden="true"></span><span class="adm-label">Customers</span></button>
+        <button type="button" class="adm-nav-item" data-tab="reviews"><span class="adm-ico" data-ico="reviews" aria-hidden="true"></span><span class="adm-label">Reviews</span><span class="adm-count" id="navReviewsCount" hidden>0</span></button>
+        <button type="button" class="adm-nav-item" data-tab="coupons"><span class="adm-ico" data-ico="coupons" aria-hidden="true"></span><span class="adm-label">Coupons</span></button>
+
+        <div class="adm-group" data-group="marketing">
+          <button type="button" class="adm-nav-item adm-nav-parent" aria-expanded="false"><span class="adm-ico" data-ico="marketing" aria-hidden="true"></span><span class="adm-label">Marketing</span><span class="adm-caret" aria-hidden="true"></span></button>
+          <div class="adm-sub" hidden>
+            <button type="button" class="adm-nav-sub" data-tab="campaigns">Campaigns</button>
+            <button type="button" class="adm-nav-sub" data-tab="notify">Email &amp; SMS alerts</button>
+          </div>
+        </div>
+
+        <div class="adm-group" data-group="appearance">
+          <button type="button" class="adm-nav-item adm-nav-parent" aria-expanded="false"><span class="adm-ico" data-ico="appearance" aria-hidden="true"></span><span class="adm-label">Appearance</span><span class="adm-caret" aria-hidden="true"></span></button>
+          <div class="adm-sub" hidden>
+            <button type="button" class="adm-nav-sub" data-tab="slides">Hero slider</button>
+            <button type="button" class="adm-nav-sub" data-tab="brands">Brands</button>
+          </div>
+        </div>
+
+        <button type="button" class="adm-nav-item" data-tab="settings"><span class="adm-ico" data-ico="settings" aria-hidden="true"></span><span class="adm-label">Settings</span></button>
+        <button type="button" class="adm-nav-item" data-tab="reports"><span class="adm-ico" data-ico="reports" aria-hidden="true"></span><span class="adm-label">Reports</span></button>
+        <button type="button" class="adm-nav-item" data-tab="help"><span class="adm-ico" data-ico="help" aria-hidden="true"></span><span class="adm-label">Help &amp; Support</span></button>
+      </nav>
+
+      <div class="adm-side-promo">
+        <div class="adm-side-promo-art" data-image-slot="sidebar-promo" aria-hidden="true"></div>
+        <div class="adm-side-promo-copy">
+          <b>Grow Your Business</b>
+          <p>Manage your store with ease and efficiency.</p>
+          <a class="adm-btn-pill" href="index.html" target="_blank" rel="noopener">Visit Store <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <p class="adm-copy">© <span id="admYear">2026</span> KhatiGhor. All rights reserved.</p>
+    </aside>
+    <div class="adm-backdrop" id="admBackdrop" hidden></div>
+
+    <!-- ===== MAIN COLUMN ===== -->
+    <div class="adm-main">
+
+      <!-- Top bar -->
+      <header class="adm-topbar">
+        <button type="button" class="adm-icon-btn adm-menu-toggle" id="admMenuToggle" aria-label="Open menu" aria-controls="admSidebar" aria-expanded="false"><span class="adm-ico" data-ico="menu" aria-hidden="true">☰</span></button>
+
+        <div class="adm-search" role="search">
+          <span class="adm-ico" data-ico="search" aria-hidden="true"></span>
+          <label class="sr-only" for="admSearch">Search products, orders, customers</label>
+          <input type="search" id="admSearch" placeholder="Search orders, products, customers, coupons..." autocomplete="off" aria-controls="admSearchResults" aria-expanded="false">
+          <kbd class="adm-kbd">Ctrl + K</kbd>
+          <div class="adm-search-results" id="admSearchResults" role="listbox" hidden></div>
+        </div>
+
+        <div class="adm-topbar-actions">
+          <div class="adm-menu-wrap">
+            <button type="button" class="adm-icon-btn" id="admBell" aria-haspopup="true" aria-expanded="false" aria-label="Notifications"><span class="adm-ico" data-ico="bell" aria-hidden="true"></span><span class="adm-badge" id="admBellCount" hidden>0</span></button>
+            <div class="adm-dropdown adm-notices" id="admBellMenu" hidden></div>
+          </div>
+          <div class="adm-menu-wrap">
+            <button type="button" class="adm-profile" id="admProfileBtn" aria-haspopup="true" aria-expanded="false">
+              <span class="adm-avatar" data-image-slot="admin-avatar" aria-hidden="true">A</span>
+              <span class="adm-profile-text"><b>Admin</b><small>Super Admin</small></span>
+              <span class="adm-caret" aria-hidden="true"></span>
+            </button>
+            <div class="adm-dropdown" id="admProfileMenu" hidden>
+              <button type="button" id="refresh">🔄 Refresh data</button>
+              <a href="index.html" target="_blank" rel="noopener">🏬 Visit store</a>
+              <button type="button" id="logout">Log out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <div class="pw-warn is-info" id="dataWarn" role="status" hidden></div>
+    <div class="pw-warn" id="pwWarn" role="alert" hidden>⚠️ You are still using the <b>default admin password</b>. Change it now: Apps Script → Project Settings → Script properties → <code>ADMIN_PASSWORD</code>.</div>
+    <main class="a-main" id="admContent" tabindex="-1">
+
+      <!-- ===== DASHBOARD ===== -->
+      <section id="tab-dash" class="adm-view">
+        <div class="dash-welcome">
+          <div>
+            <h1 id="dashGreeting">Welcome back, Admin! <span aria-hidden="true">👋</span></h1>
+            <p class="dash-sub">Here's what's happening with your store today.</p>
+          </div>
+          <label class="dash-range"><span class="sr-only">Date range</span>
+            <select id="dashRange">
+              <option value="1">Today</option>
+              <option value="7">Last 7 Days</option>
+              <option value="30" selected>Last 30 Days</option>
+              <option value="90">Last 90 Days</option>
+              <option value="365">Last 12 Months</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- KPI cards: values/percentages/sparklines are filled by admin-dashboard.js -->
+        <div class="kpi-grid" id="kpiGrid">
+          <article class="kpi-card kpi-orders" data-kpi="orders">
+            <span class="kpi-icon" data-image-slot="kpi-orders" aria-hidden="true"></span>
+            <div class="kpi-body"><span class="kpi-label">Total Orders</span><strong class="kpi-value">0</strong><span class="kpi-delta"><i class="kpi-arrow" aria-hidden="true"></i><b>0%</b></span></div>
+            <div class="kpi-spark" aria-hidden="true"></div>
+          </article>
+          <article class="kpi-card kpi-customers" data-kpi="customers">
+            <span class="kpi-icon" data-image-slot="kpi-customers" aria-hidden="true"></span>
+            <div class="kpi-body"><span class="kpi-label">Total Customers</span><strong class="kpi-value">0</strong><span class="kpi-delta"><i class="kpi-arrow" aria-hidden="true"></i><b>0%</b></span></div>
+            <div class="kpi-spark" aria-hidden="true"></div>
+          </article>
+          <article class="kpi-card kpi-revenue" data-kpi="revenue">
+            <span class="kpi-icon" data-image-slot="kpi-revenue" aria-hidden="true"></span>
+            <div class="kpi-body"><span class="kpi-label">Total Revenue</span><strong class="kpi-value">৳0</strong><span class="kpi-delta"><i class="kpi-arrow" aria-hidden="true"></i><b>0%</b></span></div>
+            <div class="kpi-spark" aria-hidden="true"></div>
+          </article>
+          <article class="kpi-card kpi-reviews" data-kpi="reviews">
+            <span class="kpi-icon" data-image-slot="kpi-reviews" aria-hidden="true"></span>
+            <div class="kpi-body"><span class="kpi-label">Total Reviews</span><strong class="kpi-value">0</strong><span class="kpi-delta"><i class="kpi-arrow" aria-hidden="true"></i><b>0%</b></span></div>
+            <div class="kpi-spark" aria-hidden="true"></div>
+          </article>
+        </div>
+
+        <div class="dash-row dash-row-main">
+          <!-- Sales overview -->
+          <section class="dash-card sales-card" aria-labelledby="salesTitle">
+            <header class="dash-card-head">
+              <h2 id="salesTitle"><span class="adm-ico" data-ico="chart" aria-hidden="true"></span> Sales Overview</h2>
+              <div class="seg" id="salesRangeTabs" role="group" aria-label="Sales range">
+                <button type="button" data-days="7">7D</button>
+                <button type="button" data-days="30" class="active">30D</button>
+                <button type="button" data-days="90">90D</button>
+                <button type="button" data-days="365">1Y</button>
+              </div>
+            </header>
+            <div class="sales-chart" id="salesChart"></div>
+            <div class="chart-tip" id="chartTip" hidden></div>
+          </section>
+
+          <!-- Recent orders -->
+          <section class="dash-card recent-card" aria-labelledby="recentTitle">
+            <header class="dash-card-head">
+              <h2 id="recentTitle"><span class="adm-ico" data-ico="orders" aria-hidden="true"></span> Recent Orders</h2>
+              <button type="button" class="link-btn" data-goto="orders">View All <span aria-hidden="true">→</span></button>
+            </header>
+            <div class="table-wrap">
+              <table class="recent-table" id="recentOrders">
+                <thead><tr><th>Order</th><th>Customer</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="dash-row dash-row-bottom">
+          <!-- Quick actions -->
+          <section class="dash-card quick-card" aria-labelledby="quickTitle">
+            <header class="dash-card-head"><h2 id="quickTitle"><span class="adm-ico" data-ico="bolt" aria-hidden="true"></span> Quick Actions</h2></header>
+            <div class="quick-grid" id="quickActions">
+              <button type="button" class="quick-item q-product" data-goto="products" data-click="#addProduct"><span class="adm-ico" data-ico="add-product" aria-hidden="true"></span><span>Add Product</span></button>
+              <button type="button" class="quick-item q-orders" data-goto="orders"><span class="adm-ico" data-ico="orders" aria-hidden="true"></span><span>Manage Orders</span></button>
+              <button type="button" class="quick-item q-coupon" data-goto="coupons" data-click="#addCoupon"><span class="adm-ico" data-ico="coupons" aria-hidden="true"></span><span>Add Coupon</span></button>
+              <button type="button" class="quick-item q-notify" data-goto="campaigns" data-click="#newCampaign"><span class="adm-ico" data-ico="marketing" aria-hidden="true"></span><span>Run Campaign</span></button>
+              <button type="button" class="quick-item q-customers" data-goto="customers"><span class="adm-ico" data-ico="customers" aria-hidden="true"></span><span>Manage Customers</span></button>
+              <button type="button" class="quick-item q-reports" data-goto="reports"><span class="adm-ico" data-ico="reports" aria-hidden="true"></span><span>View Reports</span></button>
+              <button type="button" class="quick-item q-settings" data-goto="settings"><span class="adm-ico" data-ico="settings" aria-hidden="true"></span><span>Site Settings</span></button>
+              <button type="button" class="quick-item q-help" data-goto="help"><span class="adm-ico" data-ico="help" aria-hidden="true"></span><span>Get Support</span></button>
+            </div>
+          </section>
+
+          <!-- Top selling products -->
+          <section class="dash-card top-card" aria-labelledby="topTitle">
+            <header class="dash-card-head">
+              <h2 id="topTitle"><span class="adm-ico" data-ico="trophy" aria-hidden="true"></span> Top Selling Products</h2>
+              <button type="button" class="link-btn" data-goto="products">View All <span aria-hidden="true">→</span></button>
+            </header>
+            <ul class="top-list" id="topProducts"></ul>
+          </section>
+
+          <!-- Promo banner (native HTML/CSS, so it scales cleanly and says "KhatiGhor").
+               Optional: the generated artwork is still available at images/admin-down-img.webp — see README note in admin-theme.css. -->
+          <aside class="dash-promo dash-promo-native" aria-label="Store growth">
+            <div class="dash-promo-copy">
+              <h2>Better Store.<br>Bigger <span>Growth.</span></h2>
+              <p>Manage your e-commerce business smarter with the <b>KhatiGhor</b> admin panel.</p>
+              <button type="button" class="adm-btn-solid" data-goto="products" data-click="#addProduct">Start Selling <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="dash-promo-art" aria-hidden="true">
+              <i class="pa-leaf l1 fa-solid fa-leaf"></i><i class="pa-leaf l2 fa-solid fa-leaf"></i><i class="pa-leaf l3 fa-solid fa-leaf"></i><i class="pa-leaf l4 fa-solid fa-leaf"></i>
+              <span class="pa-bars"><u></u><u></u><u></u><u></u></span>
+              <i class="pa-trend fa-solid fa-arrow-trend-up"></i>
+              <i class="pa-bag fa-solid fa-bag-shopping"></i>
+              <i class="pa-cart fa-solid fa-cart-shopping"></i>
+              <i class="pa-spark s1 fa-solid fa-star"></i><i class="pa-spark s2 fa-solid fa-star"></i>
+            </div>
+          </aside>
+
+          <!-- Low stock -->
+          <section class="dash-card low-card" aria-labelledby="lowTitle">
+            <header class="dash-card-head"><h2 id="lowTitle"><span class="adm-ico" data-ico="warn" aria-hidden="true"></span> Low stock</h2></header>
+            <div id="lowStock"></div>
+          </section>
+        </div>
       </section>
 
       <section id="tab-orders" hidden>
         <div class="a-bar">
-          <input type="search" id="oSearch" placeholder="🔍 নাম / ফোন / অর্ডার আইডি">
-          <select id="oStatus"></select>
-          <button class="btn btn-small" id="csvBtn">⬇️ CSV</button>
+          <input type="search" id="oSearch" placeholder="🔍 Search name, phone, order ID, product, address">
+          <select id="oStatus" aria-label="Status"></select>
+          <button class="btn btn-small" id="csvBtn" type="button">⬇️ Export CSV</button>
         </div>
+        <div class="o-chips" id="oChips" role="group" aria-label="Filter by status"></div>
+        <p class="a-hint" id="oCount" role="status"></p>
         <div id="ordersList"></div>
+        <div class="o-more"><button type="button" class="btn btn-outline" id="oMore" hidden>Show more orders</button></div>
       </section>
 
       <section id="tab-slides" hidden>
-        <div class="a-bar"><button class="btn btn-small" id="addSlide">➕ নতুন স্লাইড</button><span class="a-hint" id="slideCount"></span></div>
+        <div class="a-bar"><button class="btn btn-small" id="addSlide">➕ New slide</button><span class="a-hint" id="slideCount"></span></div>
         <div class="a-card size-guide">
-          <b>📐 ছবির সঠিক মাপ (সব ডিভাইসে মানানসই)</b>
+          <b>📐 Correct image sizes (fit every device)</b>
           <table>
-            <tr><th>কোথায়</th><th>মাপ (px)</th><th>অনুপাত</th><th>সাইজ</th></tr>
-            <tr><td>ডেস্কটপ ও ট্যাবলেট স্লাইড</td><td><b>1600 × 800</b></td><td>2 : 1</td><td>≤ 250 KB</td></tr>
-            <tr><td>মোবাইল স্লাইড</td><td><b>1000 × 800</b></td><td>5 : 4</td><td>≤ 150 KB</td></tr>
-            <tr><td>পণ্যের ছবি</td><td><b>800 × 800</b></td><td>1 : 1</td><td>≤ 120 KB</td></tr>
+            <tr><th>Where</th><th>Size (px)</th><th>Ratio</th><th>File size</th></tr>
+            <tr><td>Desktop &amp; tablet slide</td><td><b>1600 × 800</b></td><td>2 : 1</td><td>≤ 250 KB</td></tr>
+            <tr><td>Mobile slide</td><td><b>1000 × 800</b></td><td>5 : 4</td><td>≤ 150 KB</td></tr>
+            <tr><td>Product image</td><td><b>800 × 800</b></td><td>1 : 1</td><td>≤ 120 KB</td></tr>
           </table>
-          <p class="a-hint">💡 আপলোড করলে ছবি নিজে থেকে এই মাপে কেটে ছোট করে নেওয়া হয়। গুরুত্বপূর্ণ লেখা/বস্তু ছবির <b>মাঝের ৮৫%</b> এলাকায় রাখুন, কারণ ছোট স্ক্রিনে কিনারা সামান্য কাটা পড়তে পারে। ব্যানারে লেখা ছবির ভেতরেই থাকলে শিরোনাম ঘর ফাঁকা রাখুন।</p>
+          <p class="a-hint">💡 Uploaded images are automatically cropped and resized to these sizes. Keep important text/objects inside the <b>middle 85%</b> of the image, because the edges may be slightly cropped on small screens. If the banner text is already part of the image, leave the Title field empty.</p>
         </div>
         <div id="slideList"></div>
       </section>
 
+      <section id="tab-brands" hidden>
+        <div class="a-bar"><button class="btn btn-small" id="addBrand">➕ Add brand</button><span class="a-hint" id="brandHint">Brand logos shown in the "Our Brands" section on the home page (max 12). Use ⬆️⬇️ to set the order.</span></div>
+        <div id="brandList"></div>
+      </section>
+
       <section id="tab-categories" hidden>
-        <div class="a-bar"><button class="btn btn-small" id="addCategory">➕ নতুন ক্যাটাগরি</button><span class="a-hint">পণ্য যোগ করার সময় এখান থেকেই ক্যাটাগরি বাছতে হয়। ⬆️⬇️ দিয়ে সাইটে দেখানোর ক্রম ঠিক করুন।</span></div>
+        <div class="a-bar"><button class="btn btn-small" id="addCategory">➕ New category</button><span class="a-hint">Products pick their category from this list. Use ⬆️⬇️ to set the order shown on the site.</span></div>
         <div class="table-wrap"><table class="a-table" id="catTable"></table></div>
       </section>
 
       <section id="tab-products" hidden>
-        <div class="a-bar"><button class="btn btn-small" id="addProduct">➕ নতুন পণ্য</button></div>
+        <div class="a-bar">
+          <button class="btn btn-small" id="addProduct" type="button">➕ New product</button>
+          <input type="search" id="pSearch" placeholder="🔍 Search products">
+          <select id="pCat" aria-label="Category"></select>
+          <select id="pStock" aria-label="Stock filter">
+            <option value="">All products</option><option value="low">Low stock (≤ 5)</option><option value="out">Out of stock</option><option value="off">Hidden on site</option>
+          </select>
+        </div>
+        <p class="a-hint" id="pCount" role="status"></p>
         <div class="table-wrap"><table class="a-table" id="prodTable"></table></div>
       </section>
 
       <section id="tab-coupons" hidden>
-        <div class="a-bar"><button class="btn btn-small" id="addCoupon">➕ নতুন কুপন</button></div>
+        <div class="a-bar"><button class="btn btn-small" id="addCoupon">➕ New coupon</button></div>
         <div class="table-wrap"><table class="a-table" id="couponTable"></table></div>
       </section>
 
       <section id="tab-reviews" hidden>
         <div class="a-bar">
           <select id="rvFilter"></select>
-          <button class="btn btn-small" id="addReview">➕ রিভিউ যোগ করুন</button>
+          <button class="btn btn-small" id="addReview">➕ Add review</button>
         </div>
-        <p class="a-hint">ক্রেতারা ডেলিভারি পাওয়ার পর রিভিউ দিলে এখানে "অপেক্ষায়" থাকে। অনুমোদন দিলে তবেই সাইটে দেখায়।</p>
+        <p class="a-hint"><b>How it works:</b> ✅ <b>Approve</b> a review to show it on the product page. 🏠 <b>Show on homepage</b> puts it in the homepage review slider (max 9; if you pick none, the latest 4★+ reviews show automatically). Use <b>➕ Add review</b> to post your own.</p>
         <div id="reviewList"></div>
       </section>
 
       <section id="tab-notify" hidden>
         <form class="form" id="notifyForm" style="max-width:640px">
-          <h3>📧 ইমেইল নোটিফিকেশন</h3>
-          <label class="pay-opt"><input type="checkbox" name="emailAdmin"> নতুন অর্ডার এলে আমাকে ইমেইল করুন</label>
-          <label>আমার ইমেইল (ফাঁকা = Apps Script মালিকের Gmail)<input name="adminEmail" type="email" placeholder="you@gmail.com"></label>
-          <label class="pay-opt"><input type="checkbox" name="emailCustomer"> ক্রেতা ইমেইল দিলে তাকে কনফার্মেশন ইমেইল পাঠান</label>
+          <h3>📧 Email notifications</h3>
+          <label class="pay-opt"><input type="checkbox" name="emailAdmin"> Email me when a new order arrives</label>
+          <label>My email (empty = the Apps Script owner's Gmail)<input name="adminEmail" type="email" placeholder="you@gmail.com"></label>
+          <label class="pay-opt"><input type="checkbox" name="emailCustomer"> Send a confirmation email to the customer if they gave an email</label>
 
-          <h3>📱 SMS নোটিফিকেশন</h3>
-          <label class="pay-opt"><input type="checkbox" name="smsAdmin"> নতুন অর্ডার এলে আমাকে SMS করুন</label>
-          <label>আমার মোবাইল নম্বর<input name="adminPhone" type="tel" placeholder="01XXXXXXXXX"></label>
-          <label class="pay-opt"><input type="checkbox" name="smsCustomer"> ক্রেতাকে SMS পাঠান</label>
-          <label>SMS গেটওয়ে (প্রিসেট)
+          <h3>📱 SMS notifications</h3>
+          <label class="pay-opt"><input type="checkbox" name="smsAdmin"> SMS me when a new order arrives</label>
+          <label>My mobile number<input name="adminPhone" type="tel" placeholder="01XXXXXXXXX"></label>
+          <label class="pay-opt"><input type="checkbox" name="smsCustomer"> Send SMS to the customer</label>
+          <label>SMS gateway (preset)
             <select id="smsPreset">
-              <option value="">— বেছে নিন —</option>
+              <option value="">— Select —</option>
               <option value="http://bulksmsbd.net/api/smsapi?api_key={key}&type=text&number={number}&senderid={sender}&message={message}">BulkSMSBD</option>
               <option value="https://api.greenweb.com.bd/api.php?token={key}&to={number_local}&message={message}">GreenWeb</option>
-              <option value="custom">অন্য গেটওয়ে (নিজে URL লিখব)</option>
+              <option value="custom">Other gateway (I will enter the URL)</option>
             </select>
           </label>
-          <label>গেটওয়ে URL টেমপ্লেট<input name="smsUrl" placeholder="https://.../api?key={key}&to={number}&msg={message}"></label>
-          <p class="a-hint">ব্যবহারযোগ্য চিহ্ন: <code>{key}</code> <code>{sender}</code> <code>{number}</code> (8801…) <code>{number_local}</code> (01…) <code>{message}</code></p>
+          <label>Gateway URL template<input name="smsUrl" placeholder="https://.../api?key={key}&to={number}&msg={message}"></label>
+          <p class="a-hint">Available placeholders: <code>{key}</code> <code>{sender}</code> <code>{number}</code> (8801…) <code>{number_local}</code> (01…) <code>{message}</code></p>
           <div class="row2">
-            <label>API Key / Token<input name="smsKey" type="password" autocomplete="off" placeholder="গেটওয়ে থেকে পাওয়া কী"></label>
-            <label>Sender ID<input name="smsSender" placeholder="যেমন: KHATIGHOR"></label>
+            <label>API Key / Token<input name="smsKey" type="password" autocomplete="off" placeholder="Key from the gateway"></label>
+            <label>Sender ID<input name="smsSender" placeholder="e.g. KHATIGHOR"></label>
           </div>
 
-          <h3>📦 স্ট্যাটাস আপডেট</h3>
-          <label class="pay-opt"><input type="checkbox" name="statusNotify"> অর্ডার কনফার্মড/শিপড/ডেলিভারড/বাতিল হলে ক্রেতাকে জানান</label>
+          <h3>📦 Status updates</h3>
+          <label class="pay-opt"><input type="checkbox" name="statusNotify"> Notify the customer when the order is confirmed / shipped / delivered / cancelled</label>
 
-          <button class="btn btn-block" type="submit">💾 সংরক্ষণ করুন</button>
+          <button class="btn btn-block" type="submit">💾 Save</button>
           <div class="mbtns">
-            <button type="button" class="btn btn-outline btn-small" id="testEmail">✉️ টেস্ট ইমেইল</button>
-            <button type="button" class="btn btn-outline btn-small" id="testSms">📱 টেস্ট SMS</button>
+            <button type="button" class="btn btn-outline btn-small" id="testEmail">✉️ Test email</button>
+            <button type="button" class="btn btn-outline btn-small" id="testSms">📱 Test SMS</button>
           </div>
           <p class="form-msg" id="notifyMsg"></p>
         </form>
@@ -152,57 +354,186 @@
 
       <section id="tab-settings" hidden>
         <form class="form" id="settingsForm" style="max-width:640px">
-          <h3>🚚 ডেলিভারি</h3>
+          <h3>🚚 Delivery</h3>
           <div class="row2">
-            <label>ঢাকার ভিতরে চার্জ (৳)<input name="deliveryInside" type="number" min="0"></label>
-            <label>ঢাকার বাইরে চার্জ (৳)<input name="deliveryOutside" type="number" min="0"></label>
+            <label>Inside Dhaka charge (৳)<input name="deliveryInside" type="number" min="0"></label>
+            <label>Outside Dhaka charge (৳)<input name="deliveryOutside" type="number" min="0"></label>
           </div>
-          <label>এই টাকার উপরে ফ্রি ডেলিভারি (৳, ০ = বন্ধ)<input name="freeDeliveryAbove" type="number" min="0"></label>
+          <label>Free delivery above this amount (৳, 0 = off)<input name="freeDeliveryAbove" type="number" min="0"></label>
 
-          <h3>📞 যোগাযোগ ও ফুটার</h3>
+          <h3>📞 Contact & footer</h3>
           <div class="row2">
-            <label>কল নম্বর<input name="phone" placeholder="01XXXXXXXXX"></label>
-            <label>হোয়াটসঅ্যাপ (8801XXXXXXXXX)<input name="whatsapp"></label>
+            <label>Call number<input name="phone" placeholder="01XXXXXXXXX"></label>
+            <label>WhatsApp (8801XXXXXXXXX)<input name="whatsapp"></label>
           </div>
           <div class="row2">
-            <label>বিকাশ নম্বর<input name="bkash"></label>
-            <label>নগদ নম্বর<input name="nagad"></label>
+            <label>bKash number<input name="bkash"></label>
+            <label>Nagad number<input name="nagad"></label>
           </div>
-          <label>ইমেইল (ফুটারে দেখাবে, ফাঁকা = লুকানো)<input name="email" type="email" placeholder="info@yourshop.com"></label>
-          <label>ঠিকানা (ফুটারে, ফাঁকা = লুকানো)<input name="address" maxlength="200" placeholder="যেমন: মিরপুর-১০, ঢাকা"></label>
-          <label>খোলার সময় (ফুটারে)<input name="hours" maxlength="200" placeholder="প্রতিদিন সকাল ৯টা – রাত ১০টা"></label>
-          <label>ফেসবুক পেজের লিংক<input name="facebook" placeholder="https://facebook.com/yourpage"></label>
-          <label>লিংকডইন লিংক<input name="linkedin" placeholder="https://www.linkedin.com/company/yourpage"></label>
-          <label>টিকটক লিংক<input name="tiktok" placeholder="https://www.tiktok.com/@yourid"></label>
-          <p class="a-hint">সোশ্যাল লিংক অবশ্যই <b>https://</b> দিয়ে শুরু হতে হবে। ফাঁকা রাখলে ফুটারে ওই আইকন দেখায় না।</p>
+          <label>Email (shown in the footer, empty = hidden)<input name="email" type="email" placeholder="info@yourshop.com"></label>
+          <label>Address (in the footer, empty = hidden)<input name="address" maxlength="200" placeholder="e.g. Mirpur-10, Dhaka"></label>
+          <label>Opening hours (in the footer)<input name="hours" maxlength="200" placeholder="Every day 9 AM – 10 PM"></label>
+          <label>Facebook page link<input name="facebook" placeholder="https://facebook.com/yourpage"></label>
+          <label>LinkedIn link<input name="linkedin" placeholder="https://www.linkedin.com/company/yourpage"></label>
+          <label>TikTok link<input name="tiktok" placeholder="https://www.tiktok.com/@yourid"></label>
+          <p class="a-hint">Social links must start with <b>https://</b>. If left empty, that icon is not shown in the footer.</p>
 
-          <h3>🎁 অফার ও প্রোমো</h3>
-          <label>ওয়েবসাইটের উপরের স্ক্রলিং নোটিশ (ফাঁকা = বন্ধ)<input name="notice" maxlength="200" placeholder="যেমন: ঈদ উপলক্ষে সব পণ্যে ১০% ছাড়!"></label>
-          <label>হিরোর পাশে কুপন কার্ড — কুপন কোড (ফাঁকা = কার্ড লুকানো)<input name="promoCoupon" maxlength="20" placeholder="যেমন: WELCOME10" style="text-transform:uppercase"></label>
-          <div class="row2">
-            <label>অফার শেষের সময় (কাউন্টডাউন)<input name="offerEndsAt" type="datetime-local"></label>
-            <label>কাউন্টডাউনের লেখা<input name="offerText" maxlength="120" placeholder="🔥 ঈদ অফার শেষ হতে বাকি:"></label>
-          </div>
-          <p class="a-hint">⏱️ কাউন্টডাউন ব্যান্ড শুধু তখনই দেখায় যখন "অফার শেষের সময়" ভবিষ্যতে থাকে; সময় ফাঁকা বা পেরিয়ে গেলে নিজে লুকিয়ে যায় (নকল/চিরস্থায়ী কাউন্টডাউন নেই — ক্রেতার আস্থার জন্য)।</p>
+          <h3>🛒 Footer "Shop" categories</h3>
+          <input type="hidden" name="footerCats">
+          <div class="footer-cat-picks" id="footerCatPicks"></div>
+          <p class="a-hint">Choose up to <b>5</b> categories to show in the footer (<span id="footerCatCount">0</span>/5). If you choose none, the first 5 are shown. Click "Save" below to apply.</p>
 
-          <h3>📈 ট্র্যাকিং</h3>
-          <label>Meta (Facebook) Pixel ID — শুধু সংখ্যা, ফাঁকা = বন্ধ
-            <input name="metaPixelId" inputmode="numeric" placeholder="যেমন: 1234567890123456">
+          <h3>🎁 Offers & promo</h3>
+          <label>Scrolling notice at the top of the website (empty = off)<input name="notice" maxlength="200" placeholder="e.g. 10% off everything for Eid!"></label>
+          <label>Coupon card beside the hero — coupon code (empty = card hidden)<input name="promoCoupon" maxlength="20" placeholder="e.g. WELCOME10" style="text-transform:uppercase"></label>
+          <div class="row2">
+            <label>Offer end time (countdown)<input name="offerEndsAt" type="datetime-local"></label>
+            <label>Countdown text<input name="offerText" maxlength="120" placeholder="🔥 Eid offer ends in:"></label>
+          </div>
+          <p class="a-hint">⏱️ The countdown band only shows while the "Offer end time" is in the future; if it is empty or in the past it hides itself (no fake / endless countdown — for customer trust).</p>
+
+          <h3>📈 Tracking</h3>
+          <label>Meta (Facebook) Pixel ID — digits only, empty = off
+            <input name="metaPixelId" inputmode="numeric" placeholder="e.g. 1234567890123456">
           </label>
-          <p class="a-hint">Facebook Events Manager → Data Sources → আপনার Pixel → আইডি কপি করে বসান। সংরক্ষণ করলেই সাইটে চালু। ঠিক চলছে কিনা দেখতে Chrome-এর "Meta Pixel Helper" ব্যবহার করুন।</p>
+          <p class="a-hint">Facebook Events Manager → Data Sources → your Pixel → copy the ID and paste it here. It goes live on the site as soon as you save. To check it works, use Chrome's "Meta Pixel Helper" extension.</p>
 
-          <button class="btn btn-block" type="submit">💾 সংরক্ষণ করুন</button>
+          <button class="btn btn-block" type="submit">💾 Save</button>
           <p class="form-msg" id="setMsg"></p>
         </form>
       </section>
-    </main>
-  </div>
 
-  <!-- পণ্য/কুপন এডিট মডাল -->
+      <!-- ===== CUSTOMERS (built from orders) ===== -->
+      <section id="tab-customers" class="adm-view" hidden>
+        <div class="a-bar">
+          <input type="search" id="custSearch" placeholder="Search name / phone / email">
+          <button type="button" class="btn btn-small" id="custCsv">⬇️ CSV</button>
+        </div>
+        <p class="a-hint">Customers are created automatically from orders (one customer per mobile number). Click a row to see that customer's orders.</p>
+        <div class="table-wrap"><table class="a-table" id="custTable"></table></div>
+      </section>
+
+      <!-- ===== REPORTS ===== -->
+      <section id="tab-reports" class="adm-view" hidden>
+        <div class="a-bar">
+          <select id="repRange">
+            <option value="7">Last 7 days</option>
+            <option value="30" selected>Last 30 days</option>
+            <option value="90">Last 90 days</option>
+            <option value="365">Last 12 months</option>
+          </select>
+          <button type="button" class="btn btn-small" id="repCsv">⬇️ Download CSV</button>
+        </div>
+        <div class="kpi-grid rep-kpis" id="repKpis"></div>
+        <div class="dash-row rep-row">
+          <section class="dash-card"><header class="dash-card-head"><h2>Payment methods</h2></header><div id="repPay"></div></section>
+          <section class="dash-card"><header class="dash-card-head"><h2>Order status</h2></header><div id="repStatus"></div></section>
+          <section class="dash-card"><header class="dash-card-head"><h2>Top products</h2></header><div id="repTop"></div></section>
+        </div>
+        <div class="table-wrap"><table class="a-table" id="repTable"></table></div>
+      </section>
+
+      <!-- ===== COURIER ===== -->
+      <section id="tab-courier" class="adm-view" hidden>
+        <div class="camp-head">
+          <div><h1>Courier</h1><p class="dash-sub">Connect your courier, send orders in one click, and keep delivery status up to date.</p></div>
+        </div>
+        <div id="courierStatus" class="courier-status is-off"></div>
+        <div class="stats courier-stats" id="courierStats"></div>
+
+        <div class="dash-row courier-grid">
+          <section class="dash-card" aria-labelledby="courierH1">
+            <h2 id="courierH1" class="courier-h">1 · Choose your courier</h2>
+            <div class="prov-grid" id="courierProviders" role="radiogroup" aria-label="Courier"></div>
+
+            <form id="courierForm" class="courier-form" autocomplete="off">
+              <div id="courierFields" class="courier-fields"></div>
+              <label class="opt"><input type="checkbox" name="makeDefault"> <span>Use this as my default courier</span></label>
+
+              <h3 class="courier-h">2 · Automation <small>(applies to all couriers · change any time)</small></h3>
+              <label class="opt"><input type="checkbox" name="markShipped"> <span><b>Mark the order as "Shipped"</b> when it is given to the courier <small>(the customer gets an SMS/email with the tracking link)</small></span></label>
+              <label class="opt"><input type="checkbox" name="autoSend"> <span><b>Send automatically</b> when I set an order to "Confirmed" <small>(API couriers only — no extra click needed)</small></span></label>
+              <label class="opt"><input type="checkbox" name="syncStatus"> <span><b>Update the order status</b> from the courier <small>(Delivered / Cancelled — API couriers only)</small></span></label>
+              <label class="opt"><input type="checkbox" name="hourlySync"> <span><b>Check delivery status every hour</b> in the background <small>(needs a one-time permission in Apps Script)</small></span></label>
+
+              <div class="courier-actions">
+                <button class="btn" type="submit">💾 Save &amp; connect</button>
+                <button class="btn btn-outline" type="button" id="courierTestBtn">Test connection</button>
+              </div>
+              <p class="form-msg" id="courierMsg" role="status"></p>
+            </form>
+          </section>
+
+          <section class="dash-card" aria-labelledby="courierH3">
+            <h2 id="courierH3" class="courier-h">3 · Your daily routine</h2>
+            <ol class="courier-flow">
+              <li><b>Confirm</b> the order on the Orders page.</li>
+              <li><b>Send</b> it — <b>Steadfast / Pathao</b>: one button (or all confirmed orders here). <b>Sundarban / CarryBee</b>: book in their portal, then <b>Add tracking</b> on the order.</li>
+              <li>The <b>tracking number</b> shows on the order, the customer is told, and they can also see it on your Track Order page.</li>
+              <li><b>Delivered / Cancelled</b> updates by itself for Steadfast and Pathao.</li>
+            </ol>
+            <div class="courier-actions">
+              <button type="button" class="btn" id="courierSendAll" disabled>🚚 Send confirmed orders</button>
+              <button type="button" class="btn btn-outline" id="courierSyncNow" disabled>🔄 Check status now</button>
+            </div>
+            <p class="a-hint">Orders with a phone number that is not an 11-digit mobile number cannot be sent — fix the number on the order first. Prepaid orders (bKash / Nagad) are sent with ৳0 to collect.</p>
+          </section>
+        </div>
+
+        <h3 class="camp-list-title">Orders with a courier</h3>
+        <div class="table-wrap"><table class="a-table" id="courierTable"></table></div>
+      </section>
+
+      <!-- ===== CAMPAIGNS ===== -->
+      <section id="tab-campaigns" class="adm-view" hidden>
+        <div class="camp-head">
+          <div><h1>Campaigns</h1><p class="dash-sub">Send an offer to your past customers by SMS or email — in 3 easy steps.</p></div>
+          <button type="button" class="btn" id="newCampaign">➕ New campaign</button>
+        </div>
+
+        <div class="dash-card camp-intro" id="campIntro">
+          <h2>What is a campaign?</h2>
+          <p>A campaign is a message you send to a group of customers to bring them back to your shop — for example a festival offer, a "we miss you" note, or news about new products. You can add a coupon and show the same offer in your website's top banner.</p>
+          <ol class="camp-how">
+            <li><b>1. Choose who</b><span>All customers, repeat buyers, people who stopped ordering…</span></li>
+            <li><b>2. Write the message</b><span>Use a ready template, add a coupon, preview it.</span></li>
+            <li><b>3. Review &amp; send</b><span>Send a test to yourself first, then send to everyone.</span></li>
+          </ol>
+        </div>
+
+        <div id="campWizard" class="camp-wizard" hidden></div>
+
+        <h3 class="camp-list-title">Past campaigns</h3>
+        <div id="campList"></div>
+      </section>
+
+      <!-- ===== HELP & SUPPORT ===== -->
+      <section id="tab-help" class="adm-view" hidden>
+        <div class="dash-card help-card">
+          <h2>Help &amp; Support</h2>
+          <ul class="help-list">
+            <li><b>Orders:</b> change the status from the Orders page — customers are notified if Email/SMS alerts are on (Marketing → Email &amp; SMS alerts).</li>
+            <li><b>Products &amp; categories:</b> add them first; the storefront reads them automatically.</li>
+            <li><b>Storefront look:</b> Appearance → Hero slider and Brands. Reviews → "Show on homepage".</li>
+            <li><b>Guide:</b> see <code>README.md</code> in the project folder for setup (Google Sheet + Apps Script).</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+    </div><!-- /.adm-main -->
+  </div><!-- /#app -->
+
+  <!-- Edit modal (products, coupons, categories, slides, reviews, brands) -->
   <dialog id="modal"><form method="dialog" class="form" id="modalForm"></form></dialog>
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="config.js"></script>
-  <script src="admin.js"></script>
+  <script src="config.js?v=13"></script>
+  <script src="search-lang.js?v=13"></script>
+  <script src="admin-search.js?v=13"></script>
+  <script src="admin.js?v=18"></script>
+  <script src="admin-dashboard.js?v=13"></script>
+  <script src="admin-campaigns.js?v=13"></script>
+  <script src="admin-courier.js?v=13"></script>
 </body>
 </html>

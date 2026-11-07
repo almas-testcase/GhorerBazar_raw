@@ -32,8 +32,19 @@ GitHub Pages static site বিনা hosting খরচে প্রকাশ �
 | `manifest.webmanifest` `sw.js` `icons/` | ইনস্টলযোগ্য অ্যাপ ও অফলাইন সহায়তা |
 | `404.html` `robots.txt` `sitemap.xml` | GitHub Pages ও SEO |
 
-> ⚠️ লাইভ করার পর `robots.txt`, `sitemap.xml` ও `index.html` এর `og:image` এ `YOUR-USERNAME/YOUR-REPO` নিজের ঠিকানা দিয়ে বদলান।
+> ⚠️ লাইভ করার পর `robots.txt`, `sitemap.xml` এ `YOUR-USERNAME/YOUR-REPO` নিজের ঠিকানা দিয়ে বদলান।
 
 হোমপেজে সার্চসহ শপিং হেডার, ক্যাটাগরি নেভিগেশন, অফার ব্যানার, ডান-থেকে-বামে স্বয়ংক্রিয় ক্যাটাগরি ও পণ্য-কার্ড ক্যারোসেল, ক্যাম্পেইন ব্যানার, প্রতিটি ক্যাটাগরির আলাদা পণ্য-সেকশন এবং সব পণ্যের তালিকা আছে। কার্ডের ওপর mouse নিলে বা keyboard focus করলে চলা থামে; “আরও পণ্য দেখুন” চাপলে একই ক্যাটাগরির বাড়তি পণ্য আসে। ডেমো পণ্যের নিজস্ব SVG `images/`-এ আছে; অ্যাডমিনে পণ্য যোগ ও ছবি upload করলে সংযুক্ত Google Sheets থেকে তা হোমপেজ/শপে দেখাবে। ডিজাইনটি নিজস্ব খাঁটিঘর ব্র্যান্ডিং ব্যবহার করে।
 
 আলাদা পেজগুলো সরাসরি GitHub Pages-এ কাজ করে। পণ্যের ডেমো তালিকা ব্যাকএন্ড সংযোগ ছাড়াই দেখা যাবে; বাস্তব পণ্য, কুপন, অর্ডার ও ট্র্যাকিং চালাতে `config.js`-এ Google Apps Script Web App URL বসান। কার্ট পেজ বদলালেও ব্রাউজারের `localStorage`-এ সংরক্ষিত থাকবে।
+
+---
+
+## Maintenance notes (speed & safety)
+
+- **After editing any CSS/JS file**, bump the `?v=NN` number in the HTML files (and `CACHE` in `sw.js`). Versioned files are cached by the browser/service worker until the number changes.
+- **Apps Script**: after pasting a new `google-apps-script.gs`, use *Deploy → Manage deployments → Edit → New version*. Public data (products, settings, slides) is cached for ~60 s on the server; any change made in the admin panel refreshes it immediately.
+- **Admin password**: change `ADMIN_PASSWORD` in *Apps Script → Project Settings → Script properties*. The admin panel shows a red warning while the default password is still in use.
+- Home/other pages start loading data in `<head>` (`prefetch.js`) and repeat visitors see the last saved data instantly while fresh data loads.
+- `images/admin-down-img.png` (1.8 MB) is no longer used by the admin dashboard and can be deleted.
+- হস্তান্তরের আগে [HANDOVER-CHECKLIST.md](HANDOVER-CHECKLIST.md) দেখুন।

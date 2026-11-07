@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin.html
 
 # GitHub Pages এ তোলার পর নিচের ঠিকানা নিজের সাইটের ঠিকানা দিয়ে বদলান (README দেখুন)
-Sitemap: https://YOUR-USERNAME.github.io/YOUR-REPO/sitemap.xml
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml   (live domain হলে # সরিয়ে নিজের ঠিকানা বসান)
