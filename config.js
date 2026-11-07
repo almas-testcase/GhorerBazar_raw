@@ -1,5 +1,5 @@
 // Google Apps Script Web App URL এখানে একবারই বসান (দোকান ও অ্যাডমিন দুটোই এটি ব্যবহার করে)
-const SITE_API_URL = "https://script.google.com/macros/s/AKfycbzYOFvKOTirvsh6UkLencQQzFUN4GwXUd4-xl-JPJEZDg_pO3N4tfTM9YvWAQjqL4nn/exec";
+const SITE_API_URL = "https://script.google.com/macros/s/AKfycbzBA9ekfOgU9VUfXf5hUpToKon5w6h2dt3rTlL2W383XPatxMGICFwSHlWPcLowpQKk/exec";
 
 // Meta (Facebook) Pixel ID — শুধু সংখ্যা। এখানে বসান, অথবা অ্যাডমিন প্যানেল > সেটিংস > "Meta Pixel ID" ঘরে (কোড না ছুঁয়েই, যেকোনো সময়)।
 // দুই জায়গায় থাকলে অ্যাডমিন প্যানেলের আইডি অগ্রাধিকার পায়। ফাঁকা থাকলে Pixel বন্ধ থাকে।
